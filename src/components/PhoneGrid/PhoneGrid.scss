@@ -1,0 +1,9 @@
+.phone-grid {
+  grid-column: 2/3;
+  background-color: #fff;
+
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: 1.5rem;
+}

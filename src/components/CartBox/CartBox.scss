@@ -1,0 +1,16 @@
+.cart-box {
+  width: 100%;
+  height: 5rem;
+  border-bottom: 1px solid white;
+  text-decoration: none;
+  color: white;
+  background-color: #43ABC9;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    margin: 0 .5rem 0 1rem;
+  }
+}
