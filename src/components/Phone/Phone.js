@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import phoneImg from './../../product-2.png';
 
 const Phone = ({ match }) => {
-  const phones = useSelector((state) => state.phones);
+  const phones = useSelector((state) => state.phonesReducer.phones);
   const phoneId = phones.find(({ id }) => id === match.params.id);
 
   return (
@@ -19,7 +19,7 @@ const Phone = ({ match }) => {
             <img src={phoneImg} alt="phone"/>
           </div>
           <div className="phone--title">
-            <h3>{phoneId.type} {phoneId.name}</h3>
+            <h3>{phoneId.brand} {phoneId.name}</h3>
             <h3>${phoneId.price}</h3>
           </div>
           <div className="phone--description">
@@ -31,8 +31,8 @@ const Phone = ({ match }) => {
         <div className="phone-stats">
           <h1>Phone Details</h1>
           <div className="stat">
-            <h2>Type</h2>
-            <p>{phoneId.type}</p>
+            <h2>Brand</h2>
+            <p>{phoneId.brand}</p>
           </div>
           {
             Object.entries(phoneId.stats).map(([key, value]) => {
@@ -49,7 +49,7 @@ const Phone = ({ match }) => {
         <div className='phone-sidebar'>
           <CartBox />
           <div className="cart-info">
-            <h3>{phoneId.type} {phoneId.name} ${phoneId.price}</h3>
+            <h3>{phoneId.brand} {phoneId.name} ${phoneId.price}</h3>
           </div>
           <AddToCart />
           <Link to='/' className='back-to-store'>

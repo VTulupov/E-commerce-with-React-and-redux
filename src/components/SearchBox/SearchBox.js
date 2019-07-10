@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './SearchBox.scss';
 import CartBox from '../CartBox/CartBox';
+import { setTextFilter } from '../../actions/filters';
 
 const SearchBox = () => {
-  const [ value, setValue ] = useState('');
+  const inputValue = useSelector((state) => state.filtersReducer.name);
+  const dispatch = useDispatch();
 
   const searchPhone = (e) => {
-    setValue(e.target.value.trim());
-    console.log(value);
+    const value = e.target.value;
+    dispatch(setTextFilter(value));
   }
 
   return (
@@ -17,7 +20,7 @@ const SearchBox = () => {
       <input 
       className='search-box--input' 
       type="text" 
-      value={value} 
+      value={inputValue} 
       onChange={searchPhone}
       placeholder='Search...'
       />

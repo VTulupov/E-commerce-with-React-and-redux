@@ -5,10 +5,9 @@ import { setCheckboxFilter, removeCheckboxFilter } from '../../actions/filters';
 
 const FilterListItem = () => {
   const phones = useSelector((state) => state.phonesReducer.phones);
-  // const filterMark = useSelector((state) => state.filtersReducer.mark);
   const dispatch = useDispatch();
 
-  const handleFilterMark = (e) => {
+  const handleFilterBrand = (e) => {
     const value = e.target.value;
 
     if (e.target.checked) {
@@ -18,23 +17,27 @@ const FilterListItem = () => {
     }
   }
 
-  const phoneMarks = phones.map((phone, i) => phone.mark).reduce((unique, mark) => unique.includes(mark) ? unique : [...unique, mark], [])
-
-  // const uniq = new Set(phoneArr)
-  // const phoneList = [...uniq]
-
-  const filteredPhoneMarks = phoneMarks.map((phone, i) => {
-    return (
-      <div className='filter-list' key={i} >
-        <input type="checkbox" name={phone} id={phone} value={phone} onChange={(e) => handleFilterMark(e)} />
-        <label htmlFor={phone}>{phone} ({phone.length})</label>
-      </div>
-    )
+  const brandsItemsCount = {}
+  phones.forEach(phone => {
+    brandsItemsCount[phone.brand] = brandsItemsCount[phone.brand] + 1 || 1;
   })
+
+  const phoneBrands = phones
+    .map((phone) => phone.brand)
+    .reduce((unique, brand) => unique.includes(brand) ? unique : [...unique, brand], [])
 
   return (
     <Fragment>
-      {filteredPhoneMarks}
+      {
+        phoneBrands.map((phone, i) => {
+          return (
+            <div className='filter-list' key={i} >
+              <input type="checkbox" name={phone} id={phone} value={phone} onChange={(e) => handleFilterBrand(e)} />
+              <label htmlFor={phone}>{phone} ({brandsItemsCount[phone]})</label>
+            </div>
+          )
+        })
+      }
     </Fragment>
   )
 }

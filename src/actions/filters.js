@@ -3,12 +3,12 @@ export const setTextFilter = (name) => ({
   name
 })
 
-export const setCheckboxFilter = (mark) => ({
+export const setCheckboxFilter = (brand) => ({
   type: 'SET_CHECKBOX_FILTER',
-  mark
+  brand
 })
 
-export const removeCheckboxFilter = (mark) => ({
+export const removeCheckboxFilter = (brand) => ({
   type: 'REMOVE_CHECKBOX_FILTER',
-  mark
+  brand
 })
