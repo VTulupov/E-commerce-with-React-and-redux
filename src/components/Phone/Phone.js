@@ -5,9 +5,10 @@ import CartBox from './../CartBox/CartBox';
 import AddToCart from './../AddToCart/AddToCart';
 import { Link } from 'react-router-dom';
 import phoneImg from './../../product-2.png';
+import { getAllPhones } from '../../selectors/phones';
 
 const Phone = ({ match }) => {
-  const phones = useSelector((state) => state.phonesReducer.phones);
+  const phones = useSelector(getAllPhones);
   const phoneId = phones.find(({ id }) => id === match.params.id);
 
   return (

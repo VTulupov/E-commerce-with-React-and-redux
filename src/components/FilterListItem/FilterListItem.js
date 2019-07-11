@@ -2,9 +2,10 @@ import React, { Fragment } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import './FilterListItem.scss';
 import { setCheckboxFilter, removeCheckboxFilter } from '../../actions/filters';
+import { getAllPhones } from '../../selectors/phones';
 
 const FilterListItem = () => {
-  const phones = useSelector((state) => state.phonesReducer.phones);
+  const phones = useSelector(getAllPhones);
   const dispatch = useDispatch();
 
   const handleFilterBrand = (e) => {
