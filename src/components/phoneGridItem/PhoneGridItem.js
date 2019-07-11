@@ -4,25 +4,10 @@ import './PhoneGridItem.scss';
 import phoneImg from './../../product-2.png';
 import AddToCart from '../AddToCart/AddToCart';
 import { Link } from 'react-router-dom';
+import { getFilteredPhones } from '../../selectors/phones';
 
 const PhoneGridItem = () => {
-  const phones = useSelector((state) => state.phonesReducer.phones);
-  const filters = useSelector((state) => state.filtersReducer);
-
-  // Search and checkbox filter solution
-  const filteredPhones = phones.filter((phone) => {
-    const searchText = (phone.brand.toLowerCase() + ' ' + phone.name.toLowerCase()).includes(filters.name.toLowerCase().trim())
-
-    if (filters.brand.length > 0 && filters.name.length === 0) {
-      return filters.brand.includes(phone.brand)
-    } else if (filters.name.length !== 0 && filters.brand.length === 0)  {
-      return searchText
-    } else if (filters.name.length > 0 && filters.name.length > 0) {
-      return filters.brand.includes(phone.brand) && searchText;
-    } else {
-      return phone
-    }
-  });
+  const filteredPhones = useSelector(getFilteredPhones);
 
   return (
     filteredPhones.map((phone) => {
