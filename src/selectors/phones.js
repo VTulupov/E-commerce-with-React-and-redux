@@ -1,7 +1,11 @@
 
-const getAllPhones = state => state.phonesReducer.phones;
+export const getAllPhones = state => state.phonesReducer.phones;
 
-const getFilteredPhones = state => {
+export const getCartState = state => state.phonesReducer.cart;
+
+export const getCartTotal = state => state.phonesReducer.total;
+
+export const getFilteredPhones = state => {
     const { phonesReducer: { phones }, filters } = state;
     return phones.filter((phone) => {
         const searchText = (phone.brand.toLowerCase() + ' ' + phone.name.toLowerCase()).includes(filters.name.toLowerCase().trim())
@@ -17,9 +21,3 @@ const getFilteredPhones = state => {
         }
     })
 };
-
-
-export {
-    getAllPhones,
-    getFilteredPhones
-}

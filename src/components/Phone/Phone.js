@@ -52,7 +52,7 @@ const Phone = ({ match }) => {
           <div className="cart-info">
             <h3>{phoneId.brand} {phoneId.name} ${phoneId.price}</h3>
           </div>
-          <AddToCart />
+          <AddToCart phone={phoneId}/>
           <Link to='/' className='back-to-store'>
             Back to store
           </Link>

@@ -9,15 +9,14 @@ const phonesDefaultState = {
       price: 130,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
-        {
-          size: '6.26 inches, 97.8 cm2 ',
-      resolution: '720 x 1520 pixels, 19:9 ratio',
-      GPU: 'Mali-G76 MP12 - EMEA',
-      CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
-      camera: '12+ 2MP rear camera',
-      battery: '1400 mAh',
-        },
-      inCart: false
+      {
+        size: '6.26 inches, 97.8 cm2 ',
+        resolution: '720 x 1520 pixels, 19:9 ratio',
+        GPU: 'Mali-G76 MP12 - EMEA',
+        CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
+        camera: '12+ 2MP rear camera',
+        battery: '1400 mAh',
+      }
     },
     {
       id: uuid(),
@@ -26,15 +25,14 @@ const phonesDefaultState = {
       price: 130,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
-        {
-          size: '6.26 inches, 97.8 cm2 ',
-      resolution: '720 x 1520 pixels, 19:9 ratio',
-      GPU: 'Mali-G76 MP12 - EMEA',
-      CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
-      camera: '12+ 2MP rear camera',
-      battery: '1400 mAh',
-        },
-      inCart: false
+      {
+        size: '6.26 inches, 97.8 cm2 ',
+        resolution: '720 x 1520 pixels, 19:9 ratio',
+        GPU: 'Mali-G76 MP12 - EMEA',
+        CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
+        camera: '12+ 2MP rear camera',
+        battery: '1400 mAh',
+      }
     },
     {
       id: uuid(),
@@ -43,15 +41,14 @@ const phonesDefaultState = {
       price: 130,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
-        {
-          size: '6.26 inches, 97.8 cm2 ',
-      resolution: '720 x 1520 pixels, 19:9 ratio',
-      GPU: 'Mali-G76 MP12 - EMEA',
-      CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
-      camera: '12+ 2MP rear camera',
-      battery: '1400 mAh',
-        },
-      inCart: false
+      {
+        size: '6.26 inches, 97.8 cm2 ',
+        resolution: '720 x 1520 pixels, 19:9 ratio',
+        GPU: 'Mali-G76 MP12 - EMEA',
+        CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
+        camera: '12+ 2MP rear camera',
+        battery: '1400 mAh',
+      }
     },
     {
       id: uuid(),
@@ -60,15 +57,14 @@ const phonesDefaultState = {
       price: 130,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
-        {
-          size: '6.26 inches, 97.8 cm2 ',
-      resolution: '720 x 1520 pixels, 19:9 ratio',
-      GPU: 'Mali-G76 MP12 - EMEA',
-      CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
-      camera: '12+ 2MP rear camera',
-      battery: '1400 mAh',
-        },
-      inCart: false
+      {
+        size: '6.26 inches, 97.8 cm2 ',
+        resolution: '720 x 1520 pixels, 19:9 ratio',
+        GPU: 'Mali-G76 MP12 - EMEA',
+        CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
+        camera: '12+ 2MP rear camera',
+        battery: '1400 mAh',
+      }
     },
     {
       id: uuid(),
@@ -77,15 +73,14 @@ const phonesDefaultState = {
       price: 130,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
-        {
-          size: '6.26 inches, 97.8 cm2 ',
-      resolution: '720 x 1520 pixels, 19:9 ratio',
-      GPU: 'Mali-G76 MP12 - EMEA',
-      CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
-      camera: '12+ 2MP rear camera',
-      battery: '1400 mAh',
-        },
-      inCart: false
+      {
+        size: '6.26 inches, 97.8 cm2 ',
+        resolution: '720 x 1520 pixels, 19:9 ratio',
+        GPU: 'Mali-G76 MP12 - EMEA',
+        CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
+        camera: '12+ 2MP rear camera',
+        battery: '1400 mAh',
+      }
     },
     {
       id: uuid(),
@@ -94,15 +89,14 @@ const phonesDefaultState = {
       price: 130,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
-        {
-          size: '6.26 inches, 97.8 cm2 ',
-      resolution: '720 x 1520 pixels, 19:9 ratio',
-      GPU: 'Mali-G76 MP12 - EMEA',
-      CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
-      camera: '12+ 2MP rear camera',
-      battery: '1400 mAh',
-        },
-      inCart: false
+      {
+        size: '6.26 inches, 97.8 cm2 ',
+        resolution: '720 x 1520 pixels, 19:9 ratio',
+        GPU: 'Mali-G76 MP12 - EMEA',
+        CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
+        camera: '12+ 2MP rear camera',
+        battery: '1400 mAh',
+      }
     },
     {
       id: uuid(),
@@ -111,15 +105,14 @@ const phonesDefaultState = {
       price: 130,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
-        {
-          size: '6.26 inches, 97.8 cm2 ',
-      resolution: '720 x 1520 pixels, 19:9 ratio',
-      GPU: 'Mali-G76 MP12 - EMEA',
-      CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
-      camera: '12+ 2MP rear camera',
-      battery: '1400 mAh',
-        },
-      inCart: false
+      {
+        size: '6.26 inches, 97.8 cm2 ',
+        resolution: '720 x 1520 pixels, 19:9 ratio',
+        GPU: 'Mali-G76 MP12 - EMEA',
+        CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
+        camera: '12+ 2MP rear camera',
+        battery: '1400 mAh',
+      }
     },
     {
       id: uuid(),
@@ -128,15 +121,14 @@ const phonesDefaultState = {
       price: 130,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
-        {
-          size: '6.26 inches, 97.8 cm2 ',
-      resolution: '720 x 1520 pixels, 19:9 ratio',
-      GPU: 'Mali-G76 MP12 - EMEA',
-      CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
-      camera: '12+ 2MP rear camera',
-      battery: '1400 mAh',
-        },
-      inCart: false
+      {
+        size: '6.26 inches, 97.8 cm2 ',
+        resolution: '720 x 1520 pixels, 19:9 ratio',
+        GPU: 'Mali-G76 MP12 - EMEA',
+        CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
+        camera: '12+ 2MP rear camera',
+        battery: '1400 mAh',
+      }
     },
     {
       id: uuid(),
@@ -145,15 +137,14 @@ const phonesDefaultState = {
       price: 130,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
-        {
-          size: '6.26 inches, 97.8 cm2 ',
-      resolution: '720 x 1520 pixels, 19:9 ratio',
-      GPU: 'Mali-G76 MP12 - EMEA',
-      CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
-      camera: '12+ 2MP rear camera',
-      battery: '1400 mAh',
-        },
-      inCart: false
+      {
+        size: '6.26 inches, 97.8 cm2 ',
+        resolution: '720 x 1520 pixels, 19:9 ratio',
+        GPU: 'Mali-G76 MP12 - EMEA',
+        CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
+        camera: '12+ 2MP rear camera',
+        battery: '1400 mAh',
+      }
     },
     {
       id: uuid(),
@@ -162,15 +153,14 @@ const phonesDefaultState = {
       price: 130,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
-        {
-          size: '6.26 inches, 97.8 cm2 ',
-      resolution: '720 x 1520 pixels, 19:9 ratio',
-      GPU: 'Mali-G76 MP12 - EMEA',
-      CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
-      camera: '12+ 2MP rear camera',
-      battery: '1400 mAh',
-        },
-      inCart: false
+      {
+        size: '6.26 inches, 97.8 cm2 ',
+        resolution: '720 x 1520 pixels, 19:9 ratio',
+        GPU: 'Mali-G76 MP12 - EMEA',
+        CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
+        camera: '12+ 2MP rear camera',
+        battery: '1400 mAh',
+      }
     },
     {
       id: uuid(),
@@ -179,15 +169,14 @@ const phonesDefaultState = {
       price: 130,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
-        {
-          size: '6.26 inches, 97.8 cm2 ',
-      resolution: '720 x 1520 pixels, 19:9 ratio',
-      GPU: 'Mali-G76 MP12 - EMEA',
-      CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
-      camera: '12+ 2MP rear camera',
-      battery: '1400 mAh',
-        },
-      inCart: false
+      {
+        size: '6.26 inches, 97.8 cm2 ',
+        resolution: '720 x 1520 pixels, 19:9 ratio',
+        GPU: 'Mali-G76 MP12 - EMEA',
+        CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
+        camera: '12+ 2MP rear camera',
+        battery: '1400 mAh',
+      }
     },
     {
       id: uuid(),
@@ -196,15 +185,14 @@ const phonesDefaultState = {
       price: 130,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
-        {
-          size: '6.26 inches, 97.8 cm2 ',
-      resolution: '720 x 1520 pixels, 19:9 ratio',
-      GPU: 'Mali-G76 MP12 - EMEA',
-      CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
-      camera: '12+ 2MP rear camera',
-      battery: '1400 mAh',
-        },
-      inCart: false
+      {
+        size: '6.26 inches, 97.8 cm2 ',
+        resolution: '720 x 1520 pixels, 19:9 ratio',
+        GPU: 'Mali-G76 MP12 - EMEA',
+        CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
+        camera: '12+ 2MP rear camera',
+        battery: '1400 mAh',
+      }
     },
     {
       id: uuid(),
@@ -213,15 +201,14 @@ const phonesDefaultState = {
       price: 130,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
-        {
-          size: '6.26 inches, 97.8 cm2 ',
-      resolution: '720 x 1520 pixels, 19:9 ratio',
-      GPU: 'Mali-G76 MP12 - EMEA',
-      CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
-      camera: '12+ 2MP rear camera',
-      battery: '1400 mAh',
-        },
-      inCart: false
+      {
+        size: '6.26 inches, 97.8 cm2 ',
+        resolution: '720 x 1520 pixels, 19:9 ratio',
+        GPU: 'Mali-G76 MP12 - EMEA',
+        CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
+        camera: '12+ 2MP rear camera',
+        battery: '1400 mAh',
+      }
     },
     {
       id: uuid(),
@@ -230,15 +217,14 @@ const phonesDefaultState = {
       price: 130,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
-        {
-          size: '6.26 inches, 97.8 cm2 ',
-      resolution: '720 x 1520 pixels, 19:9 ratio',
-      GPU: 'Mali-G76 MP12 - EMEA',
-      CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
-      camera: '12+ 2MP rear camera',
-      battery: '1400 mAh',
-        },
-      inCart: false
+      {
+        size: '6.26 inches, 97.8 cm2 ',
+        resolution: '720 x 1520 pixels, 19:9 ratio',
+        GPU: 'Mali-G76 MP12 - EMEA',
+        CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
+        camera: '12+ 2MP rear camera',
+        battery: '1400 mAh',
+      }
     },
     {
       id: uuid(),
@@ -247,15 +233,14 @@ const phonesDefaultState = {
       price: 130,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
-        {
-          size: '6.26 inches, 97.8 cm2 ',
-      resolution: '720 x 1520 pixels, 19:9 ratio',
-      GPU: 'Mali-G76 MP12 - EMEA',
-      CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
-      camera: '12+ 2MP rear camera',
-      battery: '1400 mAh',
-        },
-      inCart: false
+      {
+        size: '6.26 inches, 97.8 cm2 ',
+        resolution: '720 x 1520 pixels, 19:9 ratio',
+        GPU: 'Mali-G76 MP12 - EMEA',
+        CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
+        camera: '12+ 2MP rear camera',
+        battery: '1400 mAh',
+      }
     },
     {
       id: uuid(),
@@ -264,15 +249,14 @@ const phonesDefaultState = {
       price: 130,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
-        {
-          size: '6.26 inches, 97.8 cm2 ',
-      resolution: '720 x 1520 pixels, 19:9 ratio',
-      GPU: 'Mali-G76 MP12 - EMEA',
-      CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
-      camera: '12+ 2MP rear camera',
-      battery: '1400 mAh',
-        },
-      inCart: false
+      {
+        size: '6.26 inches, 97.8 cm2 ',
+        resolution: '720 x 1520 pixels, 19:9 ratio',
+        GPU: 'Mali-G76 MP12 - EMEA',
+        CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
+        camera: '12+ 2MP rear camera',
+        battery: '1400 mAh',
+      }
     },
     {
       id: uuid(),
@@ -281,15 +265,14 @@ const phonesDefaultState = {
       price: 130,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
-        {
-          size: '6.26 inches, 97.8 cm2 ',
-      resolution: '720 x 1520 pixels, 19:9 ratio',
-      GPU: 'Mali-G76 MP12 - EMEA',
-      CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
-      camera: '12+ 2MP rear camera',
-      battery: '1400 mAh',
-        },
-      inCart: false
+      {
+        size: '6.26 inches, 97.8 cm2 ',
+        resolution: '720 x 1520 pixels, 19:9 ratio',
+        GPU: 'Mali-G76 MP12 - EMEA',
+        CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
+        camera: '12+ 2MP rear camera',
+        battery: '1400 mAh',
+      }
     },
     {
       id: uuid(),
@@ -298,15 +281,14 @@ const phonesDefaultState = {
       price: 130,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
-        {
-          size: '6.26 inches, 97.8 cm2 ',
-      resolution: '720 x 1520 pixels, 19:9 ratio',
-      GPU: 'Mali-G76 MP12 - EMEA',
-      CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
-      camera: '12+ 2MP rear camera',
-      battery: '1400 mAh',
-        },
-      inCart: false
+      {
+        size: '6.26 inches, 97.8 cm2 ',
+        resolution: '720 x 1520 pixels, 19:9 ratio',
+        GPU: 'Mali-G76 MP12 - EMEA',
+        CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
+        camera: '12+ 2MP rear camera',
+        battery: '1400 mAh',
+      }
     },
     {
       id: uuid(),
@@ -315,15 +297,14 @@ const phonesDefaultState = {
       price: 130,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
-        {
-          size: '6.26 inches, 97.8 cm2 ',
-      resolution: '720 x 1520 pixels, 19:9 ratio',
-      GPU: 'Mali-G76 MP12 - EMEA',
-      CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
-      camera: '12+ 2MP rear camera',
-      battery: '1400 mAh',
-        },
-      inCart: false
+      {
+        size: '6.26 inches, 97.8 cm2 ',
+        resolution: '720 x 1520 pixels, 19:9 ratio',
+        GPU: 'Mali-G76 MP12 - EMEA',
+        CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
+        camera: '12+ 2MP rear camera',
+        battery: '1400 mAh',
+      }
     },
     {
       id: uuid(),
@@ -332,15 +313,14 @@ const phonesDefaultState = {
       price: 130,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
-        {
-          size: '6.26 inches, 97.8 cm2 ',
-      resolution: '720 x 1520 pixels, 19:9 ratio',
-      GPU: 'Mali-G76 MP12 - EMEA',
-      CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
-      camera: '12+ 2MP rear camera',
-      battery: '1400 mAh',
-        },
-      inCart: false
+      {
+        size: '6.26 inches, 97.8 cm2 ',
+        resolution: '720 x 1520 pixels, 19:9 ratio',
+        GPU: 'Mali-G76 MP12 - EMEA',
+        CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
+        camera: '12+ 2MP rear camera',
+        battery: '1400 mAh',
+      }
     },
     {
       id: uuid(),
@@ -349,26 +329,68 @@ const phonesDefaultState = {
       price: 130,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
-        {
-          size: '6.26 inches, 97.8 cm2 ',
-      resolution: '720 x 1520 pixels, 19:9 ratio',
-      GPU: 'Mali-G76 MP12 - EMEA',
-      CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
-      camera: '12+ 2MP rear camera',
-      battery: '1400 mAh',
-        },
-      inCart: false
+      {
+        size: '6.26 inches, 97.8 cm2 ',
+        resolution: '720 x 1520 pixels, 19:9 ratio',
+        GPU: 'Mali-G76 MP12 - EMEA',
+        CPU: 'Octa-core, 2x2.73 GHz Mongoose M4',
+        camera: '12+ 2MP rear camera',
+        battery: '1400 mAh',
+      }
     }
   ],
-  cart: []
+  cart: [],
+  total: 0
 }
 
 const phonesReducer = (state = phonesDefaultState, action) => {
   switch (action.type) {
-    case 'ADD_PHONE':
+    case 'ADD_TO_CART':
+      let addedPhone = state.phones.find((phone) => action.id === phone.id);
+      let existingPhone = state.cart.find((existingPhone) => action.id === existingPhone.id);
+      
+      if (existingPhone) {
+        addedPhone.quantity += 1;
+        return {
+          ...state,
+          total: state.total + addedPhone.price
+        }
+      } else {
+        addedPhone.quantity = 1;
+        let newTotal = state.total + addedPhone.price
+        return {
+          ...state,
+          cart: [...state.cart, addedPhone],
+          total: newTotal
+        }
+      };
+    case 'REMOVE_FROM_CART':
+      let phoneToRemove = state.cart.find((phone) => action.id === phone.id)
+      let removePhone = state.cart.filter((phone) => action.id !== phone.id);
+
+      let newTotal = state.total - (phoneToRemove.price * phoneToRemove.quantity)
       return {
         ...state,
-        phones: [ ...state.phones, action.phone ]
+        cart: removePhone,
+        total: newTotal
+      }
+    case 'DECREMENT':
+      let phone = state.cart.find((phone) => action.id === phone.id)
+      if (phone.quantity > 1) {
+        phone.quantity -= 1;
+        let newTotal = state.total - phone.price
+        return {
+          ...state,
+          total: newTotal
+        }
+      } else {
+        return state
+      };
+    case 'CLEAR_CART':
+      return {
+        ...state,
+        cart: [],
+        total: 0
       }
     default:
       return state;

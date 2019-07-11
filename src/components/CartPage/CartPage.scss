@@ -1,0 +1,192 @@
+.cart-page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  overflow: hidden;
+
+  h1 {
+    font-size: 3rem;
+    color: #999;
+    text-transform: uppercase;
+  }
+
+  &--items {
+    min-height: 58rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.2);
+    padding: 3rem 0;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .item-list {
+      width: 60%;
+      box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.2);
+      .item {
+        height: 16rem;
+        width: 100%;
+        border-bottom: 1px solid rgba(211, 211, 211, .4);
+        display: flex;
+        align-items: flex-start;
+
+        &--box {
+          height: 100%;
+          width: 20rem;
+
+          img {
+            object-fit: contain;
+            height: 100%;
+            width: 100%;
+            padding: .5rem 0;
+          }
+        }
+
+        &--details {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          width: 100%;
+          height: 100%;
+
+          p {
+            margin: 0;
+            padding: 0;
+          }
+
+          .title {
+            font-size: 2.4rem;
+            // margin-bottom: .8rem;
+          }
+
+          .price, .quantity {
+            font-size: 1.8rem;
+            font-weight: 500;
+          }
+
+          .quantity {
+            width: 12rem;
+          }
+
+          .block {
+            padding-bottom: 6px
+          }
+
+          .remove {
+            width: 10rem;
+            height: 3rem;
+            border: none;
+            color: #fff;
+            background-color: #D24D57;
+            cursor: pointer;
+            margin-bottom: 5px;
+          }
+
+          .flex-row {
+            display: flex;
+            // margin-bottom: 1.5rem;
+            align-items: center;
+
+            .add,.sub {
+              margin-right: 1rem;
+              font-size: 2.5rem;
+              width: 2.2rem;
+              height: 2.2rem;;
+              border-radius: 50%;
+              border: none;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              color: #fff;
+              cursor: pointer;
+
+              -webkit-touch-callout: none; /* iOS Safari */
+              -webkit-user-select: none; /* Safari */
+              -khtml-user-select: none; /* Konqueror HTML */
+              -moz-user-select: none; /* Firefox */
+              -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+            }
+
+            .add {
+              background-color: #28a745;
+              padding-bottom: 6.5px;
+            }
+            .sub {
+              background-color: #D24D57;
+              padding-bottom: 6.2px;
+            }
+            
+          }
+        }
+      }
+    }
+
+    
+  }
+
+  &--grid {
+    display: grid;
+    grid-template-columns: auto 20vw;
+    grid-gap: 1.5rem;
+    width: 100%;
+    height: 100%;
+    margin: 2rem 5rem;
+  }
+
+  &--sidebar {
+    grid-column: 2/3;
+    height: 30rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.2);
+
+    h2 {
+      font-size: 2.6rem;
+      font-weight: 400;
+    }
+
+    .total {
+      font-size: 2rem;
+    }
+
+    button {
+      cursor: pointer;
+      width: 15rem;
+      height: 3.5rem;
+      border: none;
+      color: #fff;
+      font-size: 1.4rem;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .go-back {
+      background-color: #43ABC9;
+    }
+    
+    .clear-cart {
+      background-color: #D24D57;
+    }
+
+    .buy-now {
+      background-color: #28a745;
+    }
+
+    &>* {
+      margin: .7rem 0;
+    }
+  }
+}

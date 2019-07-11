@@ -19,7 +19,7 @@ const PhoneGridItem = ({ phone }) => {
         <p className="description">{phone.description.substring(0, 53)}...</p>
       </div>
       <div className="buttons">
-        <AddToCart />
+        <AddToCart phone={phone}/>
         <Link to={`/phones/${phone.id}`} className='more-info'>
           More Info
           </Link>
@@ -27,6 +27,7 @@ const PhoneGridItem = ({ phone }) => {
     </div>
   )
 }
+
 PhoneGridItem.propTypes = {
   phone: PropTypes.shape({
     id: PropTypes.string,
@@ -41,8 +42,7 @@ PhoneGridItem.propTypes = {
       CPU: PropTypes.string,
       camera: PropTypes.string,
       battery: PropTypes.string
-    }),
-    inCart: PropTypes.bool
+    })
   })
 };
 
