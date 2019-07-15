@@ -12,3 +12,7 @@ export const removeCheckboxFilter = (brand) => ({
   type: 'REMOVE_CHECKBOX_FILTER',
   brand
 })
+
+export const clearFilters = () => ({
+  type: 'CLEAR_FILTERS'
+})

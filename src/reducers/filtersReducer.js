@@ -16,10 +16,16 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
         ...state,
         brand: [...state.brand, action.brand]
       }
-    case 'REMOVE_CHECKBOX_FILTER' :
+    case 'REMOVE_CHECKBOX_FILTER':
       return {
         ...state,
         brand: state.brand.filter((brand) => brand !== action.brand)
+      }
+    case 'CLEAR_FILTERS':
+      return {
+        ...state,
+        brand: [],
+        name: ""
       }
     default:
       return state

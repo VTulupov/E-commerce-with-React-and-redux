@@ -1,11 +1,15 @@
 import React from 'react';
 import './PhoneGridItem.scss';
+import { useDispatch } from 'react-redux';
 import phoneImg from './../../product-2.png';
 import AddToCart from '../AddToCart/AddToCart';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { clearFilters } from '../../actions/filters';
 
 const PhoneGridItem = ({ phone }) => {
+  const dispatch = useDispatch();
+
   return (
     <div className='phone-item' key={phone.id}>
       <div className="phone-item--box">
@@ -20,7 +24,7 @@ const PhoneGridItem = ({ phone }) => {
       </div>
       <div className="buttons">
         <AddToCart phone={phone}/>
-        <Link to={`/phones/${phone.id}`} className='more-info'>
+        <Link to={`/phones/${phone.id}`} className='more-info' onClick={() => dispatch(clearFilters())}>
           More Info
           </Link>
       </div>

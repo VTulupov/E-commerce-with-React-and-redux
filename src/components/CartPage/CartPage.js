@@ -1,11 +1,12 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import './CartPage.scss';
 import phoneImg from './../../product-2.png';
 import { getCartState, getCartTotal } from '../../selectors/phones';
 import { addToCart, removeFromCart, decrementFromCart, clearCart } from '../../actions/phones';
 
-const CartPage = ({ history }) => {
+const CartPage = () => {
   const phones = useSelector(getCartState);
   const total = useSelector(getCartTotal);
   const dispatch = useDispatch();
@@ -51,7 +52,7 @@ const CartPage = ({ history }) => {
         <div className="cart-page--sidebar">
           <h2>My Cart</h2>
           <p className="total">Total: {total}$</p>
-          <button className='go-back' onClick={() => {history.push('/')}}>Go Back</button>
+          <Link to='/' className='go-back'>Go Back</Link>
           <button className='clear-cart' onClick={() => {dispatch(clearCart())}}>Clear Cart</button>
           <button className='buy-now'>Buy Now!</button>
         </div>
@@ -61,3 +62,5 @@ const CartPage = ({ history }) => {
 }
 
 export default CartPage
+
+// <button className='go-back' onClick={() => {history.push('/')}}>Go Back</button>

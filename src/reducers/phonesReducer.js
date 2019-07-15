@@ -346,8 +346,8 @@ const phonesDefaultState = {
 const phonesReducer = (state = phonesDefaultState, action) => {
   switch (action.type) {
     case 'ADD_TO_CART':
-      let addedPhone = state.phones.find((phone) => action.id === phone.id);
-      let existingPhone = state.cart.find((existingPhone) => action.id === existingPhone.id);
+      const addedPhone = state.phones.find((phone) => action.id === phone.id);
+      const existingPhone = state.cart.find((existingPhone) => action.id === existingPhone.id);
       
       if (existingPhone) {
         addedPhone.quantity += 1;
@@ -357,7 +357,7 @@ const phonesReducer = (state = phonesDefaultState, action) => {
         }
       } else {
         addedPhone.quantity = 1;
-        let newTotal = state.total + addedPhone.price
+        const newTotal = state.total + addedPhone.price
         return {
           ...state,
           cart: [...state.cart, addedPhone],
@@ -365,20 +365,21 @@ const phonesReducer = (state = phonesDefaultState, action) => {
         }
       };
     case 'REMOVE_FROM_CART':
-      let phoneToRemove = state.cart.find((phone) => action.id === phone.id)
-      let removePhone = state.cart.filter((phone) => action.id !== phone.id);
+      const phoneToRemove = state.cart.find((phone) => action.id === phone.id)
+      const removePhone = state.cart.filter((phone) => action.id !== phone.id);
 
-      let newTotal = state.total - (phoneToRemove.price * phoneToRemove.quantity)
+      const newTotal = state.total - (phoneToRemove.price * phoneToRemove.quantity)
       return {
         ...state,
         cart: removePhone,
         total: newTotal
       }
     case 'DECREMENT':
-      let phone = state.cart.find((phone) => action.id === phone.id)
+      const phone = state.cart.find((phone) => action.id === phone.id);
+
       if (phone.quantity > 1) {
         phone.quantity -= 1;
-        let newTotal = state.total - phone.price
+        const newTotal = state.total - phone.price
         return {
           ...state,
           total: newTotal
