@@ -1,12 +1,13 @@
 .add-phone {
   position: fixed;
-  top: 54.5rem;
+  top: 55.5rem;
   left: 5rem;
   width: 20vw;
   height: 5rem;
   background: #43ABC9;
   border-radius: 1rem;
   overflow: hidden;
+  box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.2);
 
   &--btn {
     display: flex;

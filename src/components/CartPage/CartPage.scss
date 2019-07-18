@@ -115,19 +115,20 @@
 
             .add {
               background-color: #28a745;
-              padding-bottom: 6.5px;
+              padding-bottom: .5px;
+              padding-left: 1px;
             }
             .sub {
               background-color: #D24D57;
-              padding-bottom: 6.2px;
+              padding-bottom: 2.5px;
+              padding-left: 1px;
+              font-size: 4rem;
             }
             
           }
         }
       }
     }
-
-    
   }
 
   &--grid {
@@ -178,6 +179,13 @@
       &:focus {
         outline: none;
       }
+    }
+
+    button:disabled,
+    button[disabled]{
+      border: 1px solid #999999;
+      background-color: #cccccc;
+      color: #666666;
     }
 
     .go-back {

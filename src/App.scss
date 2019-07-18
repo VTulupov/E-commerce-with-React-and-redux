@@ -15,4 +15,18 @@ body {
   box-sizing: border-box;
 }
 
+  html::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  html::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 20px;
+  }
+
+  html::-webkit-scrollbar-track {
+    background: #fff;
+    // border-radius: 20px;
+  }
+
 @import './components/homePage/HomePage.scss';

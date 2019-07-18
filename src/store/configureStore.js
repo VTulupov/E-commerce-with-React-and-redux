@@ -1,12 +1,14 @@
 import { createStore, combineReducers } from 'redux';
 import phonesReducer from './../reducers/phonesReducer';
 import filtersReducer from '../reducers/filtersReducer';
+import paymentFormReducer from '../reducers/paymentFormReducer';
 
 const configureStore = () => {
   const store = createStore(
     combineReducers({
       phonesReducer,
-      filters: filtersReducer
+      filters: filtersReducer,
+      paymentInfo: paymentFormReducer
     }),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )

@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './CartPage.scss';
 import phoneImg from './../../product-2.png';
 import { getCartState, getCartTotal } from '../../selectors/phones';
 import { addToCart, removeFromCart, decrementFromCart, clearCart } from '../../actions/phones';
+import CheckoutModal from '../CheckoutModal/CheckoutModal';
 
 const CartPage = () => {
   const phones = useSelector(getCartState);
   const total = useSelector(getCartTotal);
   const dispatch = useDispatch();
+
+  const [ modal, setModal ] = useState(false);
+
+  const openModal = () => setModal(true);
+  const closeModal = () => setModal(false);
   
   return (
     <div className='cart-page'>
@@ -53,10 +59,11 @@ const CartPage = () => {
           <h2>My Cart</h2>
           <p className="total">Total: {total}$</p>
           <Link to='/' className='go-back'>Go Back</Link>
-          <button className='clear-cart' onClick={() => {dispatch(clearCart())}}>Clear Cart</button>
-          <button className='buy-now'>Buy Now!</button>
+          <button className='clear-cart' disabled={phones.length === 0} onClick={() => {dispatch(clearCart())}}>Clear Cart</button>
+          <button className='buy-now' onClick={openModal} disabled={phones.length === 0} >Buy Now!</button>
         </div>
       </div>
+      <CheckoutModal modal={modal} closeModal={closeModal}/>
     </div>
   )
 }
