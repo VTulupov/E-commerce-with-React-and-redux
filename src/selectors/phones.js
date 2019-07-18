@@ -19,5 +19,9 @@ export const getFilteredPhones = state => {
         } else {
             return phone
         }
-    })
+    }).sort((a, b) => {
+        const textA = a.brand.toUpperCase();
+        const textB = b.brand.toUpperCase();
+        return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+    });
 };

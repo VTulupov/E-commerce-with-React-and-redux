@@ -9,7 +9,7 @@ const AddPhoneBtn = () => {
 
   return (
     <div className='add-phone'>
-      <Link to='/' className='add-phone--btn' onClick={() => dispatch(clearFilters())}>
+      <Link to='/add-phone-form' className='add-phone--btn' onClick={() => dispatch(clearFilters())}>
         ADD A NEW PHONE
       </Link>
     </div>

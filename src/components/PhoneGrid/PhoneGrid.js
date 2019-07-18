@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, Fragment } from 'react'
 import './PhoneGrid.scss';
 import PhoneGridItem from '../phoneGridItem/PhoneGridItem';
 import { getFilteredPhones } from '../../selectors/phones';
@@ -6,10 +6,42 @@ import { useSelector } from 'react-redux';
 
 const PhoneGrid = () => {
   const filteredPhones = useSelector(getFilteredPhones);
+  // Set pagination and limit phones 12 per page
+  const [ currentPage, setCurrentPage ] = useState(1);
+  const [ phonesPerPage ] = useState(12);
+
+  // Get current phones
+  const indexOfLastPhone = currentPage * phonesPerPage;
+  const indexOfFirstPost = indexOfLastPhone - phonesPerPage;
+  const currentPhones = filteredPhones.slice(indexOfFirstPost, indexOfLastPhone);
+
+  // Get pages
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(filteredPhones.length / phonesPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
+  // Change page
+  const paginate = (number) => setCurrentPage(number)
+
   return (
-    <div className="phone-grid">
-      {filteredPhones.map((phone) => <PhoneGridItem phone={phone} key={phone.id}/>)}
-    </div>
+    <Fragment>
+      <div className="phone-grid">
+        {currentPhones.map((phone) => <PhoneGridItem phone={phone} key={phone.id}/>)}
+      </div>
+      <div className="pagination">
+        <ul>
+          {
+            pageNumbers.map((number) => (
+              <li className={currentPage === number ? 'active' : ''} key={number} onClick={() => paginate(number)}>
+                {number}
+              </li>
+            ))
+          }
+          <div className={"bar"}></div>
+        </ul>
+      </div>
+    </Fragment>
   )
 }
 
