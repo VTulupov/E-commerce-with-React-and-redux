@@ -14,6 +14,7 @@ import Review from './Review';
 import uuid from 'uuid/v4'
 import { clearCart } from '../../actions/phones';
 import { useDispatch } from 'react-redux';
+import { addShippingAddress, addPaymentMethod, clearInfo } from '../../actions/payment';
 
 const useStyles = makeStyles(theme => ({
   stepper: {
@@ -41,6 +42,61 @@ const CheckoutModal = ({ modal, closeModal }) => {
   let [ activeStep, setActiveStep ] = useState(0);
   const steps = ['Shipping address', 'Payment details', 'Review your order'];
 
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [address, setAddress] = useState('');
+  const [city, setCity] = useState('');
+  const [region, setRegion] = useState('');
+  const [zip, setZip] = useState(0);
+  const [country, setCountry] = useState('');
+
+  const handleFirstName = (e) => setFirstName(e.target.value);
+  const handleLastName = (e) => setLastName(e.target.value);
+  const handleAddress = (e) => setAddress(e.target.value);
+  const handleCity = (e) => setCity(e.target.value);
+  const handleRegion = (e) => setRegion(e.target.value);
+  const handleZip = (e) => setZip(e.target.value);
+  const handleCountry = (e) => setCountry(e.target.value);
+
+  const [cardName, setCardName] = useState('');
+  const [cardNumber, setCardNumber] = useState('');
+  const [expiryDate, setExpiryDate] = useState('');
+  const [CVV, setCVV] = useState('');
+
+  const handleCardName = (e) => setCardName(e.target.value);
+  const handleCardNumber = (e) => setCardNumber(e.target.value);
+  const handleExpiryDate = (e) => setExpiryDate(e.target.value);
+  const handleCVV = (e) => setCVV(e.target.value);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (activeStep === 0) {
+      dispatch(addShippingAddress({
+        firstName,
+        lastName,
+        address,
+        city,
+        region,
+        zip,
+        country
+      }))
+      handleNext();
+    } else if (activeStep === 1) {
+      dispatch(addPaymentMethod({
+        cardName,
+        cardNumber,
+        expiryDate,
+        CVV
+      }))
+      handleNext();
+    } else {
+      handleNext();
+    }
+  }
+
+  const userInput = { firstName, lastName, address, city, region, zip, country }
+  const paymentInput = { cardName, cardNumber, expiryDate, CVV }
+
   const handleNext = () => {
     setActiveStep(activeStep + 1);
   };
@@ -50,10 +106,11 @@ const CheckoutModal = ({ modal, closeModal }) => {
   };
 
   const resetSteps = () => {
-    if (activeStep === 3) {
+    if (activeStep === steps.length) {
       setActiveStep(activeStep = 0);
       closeModal();
       dispatch(clearCart());
+      dispatch(clearInfo());
     } else {
       closeModal();
     }
@@ -62,9 +119,22 @@ const CheckoutModal = ({ modal, closeModal }) => {
   function getStepContent(step) {
     switch (step) {
       case 0:
-        return <AddressForm />;
+        return <AddressForm userInput={userInput}
+          handleFirstName={handleFirstName}
+          handleLastName={handleLastName}
+          handleAddress={handleAddress}
+          handleCity={handleCity}
+          handleRegion={handleRegion}
+          handleZip={handleZip}
+          handleCountry={handleCountry}
+        />;
       case 1:
-        return <PaymentForm />;
+        return <PaymentForm paymentInput={paymentInput} 
+          handleCardName={handleCardName}
+          handleCardNumber={handleCardNumber}
+          handleExpiryDate={handleExpiryDate}
+          handleCVV={handleCVV}
+        />;
       case 2:
         return <Review />;
       default:
@@ -114,7 +184,7 @@ const CheckoutModal = ({ modal, closeModal }) => {
                 </div>
               </Fragment>
             ) : (
-                <Fragment>
+                <form onSubmit={handleSubmit}>
                   {
                     getStepContent(activeStep)
                   }
@@ -127,13 +197,13 @@ const CheckoutModal = ({ modal, closeModal }) => {
                     <Button
                       variant="contained"
                       color="primary"
-                      onClick={handleNext}
+                      type='submit'
                       className={classes.button}
                     >
                       {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
                     </Button>
                   </div>
-                </Fragment>
+                </form>
               )
             }
           </Fragment>

@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React, { Fragment } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 
-const PaymentForm = () => {
-
+const PaymentForm = (props) => {
   return (
-    <form>
+    <Fragment>
       <Typography variant="h6" gutterBottom>
         Payment method
       </Typography>
@@ -17,6 +16,8 @@ const PaymentForm = () => {
             id="cardName" 
             label="Name on card" 
             fullWidth 
+            value={props.paymentInput.cardName}
+            onChange={props.handleCardName}
             />
         </Grid>
         <Grid item xs={12} md={6}>
@@ -24,7 +25,9 @@ const PaymentForm = () => {
             required 
             id="cardNumber" 
             label="Card number" 
-            fullWidth 
+            fullWidth
+            value={props.paymentInput.cardNumber}
+            onChange={props.handleCardNumber}
             />
         </Grid>
         <Grid item xs={12} md={6}>
@@ -33,6 +36,8 @@ const PaymentForm = () => {
             id="expDate" 
             label="Expiry date" 
             fullWidth
+            value={props.paymentInput.expiryDate}
+            onChange={props.handleExpiryDate}
             />
         </Grid>
         <Grid item xs={12} md={6}>
@@ -42,10 +47,12 @@ const PaymentForm = () => {
             label="CVV"
             helperText="Last three digits on signature strip"
             fullWidth
+            value={props.paymentInput.CVV}
+            onChange={props.handleCVV}
           />
         </Grid>
       </Grid>
-    </form>
+    </Fragment>
   )
 }
 

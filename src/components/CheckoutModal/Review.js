@@ -7,6 +7,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Grid from '@material-ui/core/Grid';
 import { useSelector } from "react-redux";
 import { getCartState, getCartTotal } from './../../selectors/phones'
+import { getAddressInfo, getPaymentMethod } from '../../selectors/paymentInfo';
 
 const useStyles = makeStyles(theme => ({
   listItem: {
@@ -24,6 +25,8 @@ const Review = () => {
   const classes = useStyles();
   const products = useSelector(getCartState);
   const total = useSelector(getCartTotal);
+  const addressInfo = useSelector(getAddressInfo);
+  const paymentInfo = useSelector(getPaymentMethod);
 
   return (
     <Fragment>
@@ -46,9 +49,20 @@ const Review = () => {
       </List>
       <Grid container spacing={2}>
         <Grid item container direction="column"  xs={12} sm={6}>
-          <Typography gutterBottom variant="h6" className={classes.title} >User Info</Typography>
+          <Typography gutterBottom variant="h6" className={classes.title} >Shipping</Typography>
           <Grid container>
-
+            <Grid item xs={12}>
+              <Typography gutterBottom>{addressInfo.firstName} {addressInfo.lastName}</Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <Typography gutterBottom>{addressInfo.address}</Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <Typography gutterBottom>{addressInfo.city}</Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <Typography gutterBottom>{addressInfo.country}</Typography>
+            </Grid>
           </Grid>
         </Grid>
         <Grid item container direction="column" xs={12} sm={6}>
@@ -61,8 +75,25 @@ const Review = () => {
             </Grid>
             <Grid item xs={6}>
               <Typography gutterBottom>Visa</Typography>
+            </Grid> 
+            <Grid item xs={6}>
+              <Typography gutterBottom>Card Holder</Typography>
             </Grid>
-
+            <Grid item xs={6}>
+              <Typography gutterBottom>{paymentInfo.cardName}</Typography>
+            </Grid>
+            <Grid item xs={6}>
+              <Typography gutterBottom>Card number</Typography>
+            </Grid>
+            <Grid item xs={6}>
+              <Typography gutterBottom>{paymentInfo.cardNumber}</Typography>
+            </Grid>
+            <Grid item xs={6}>
+              <Typography gutterBottom>Expiry Date</Typography>
+            </Grid>
+            <Grid item xs={6}>
+              <Typography gutterBottom>{paymentInfo.expiryDate}</Typography>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
