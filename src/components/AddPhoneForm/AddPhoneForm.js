@@ -103,16 +103,14 @@ const AddPhoneForm = ({ history }) => {
         name,
         price,
         description,
-        stats: {
-          size,
-          resolution,
-          GPU,
-          CPU,
-          camera,
-          battery
-        }
+        size,
+        resolution,
+        GPU,
+        CPU,
+        camera,
+        battery
       }))
-      // history.push('/');
+      history.push('/');
     } else {
       handleNext();
     }

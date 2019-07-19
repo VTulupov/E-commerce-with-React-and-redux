@@ -348,7 +348,7 @@ const phonesReducer = (state = phonesDefaultState, action) => {
     case 'ADD_NEW_PHONE': 
       return {
         ...state,
-        phones: [...state.phones, action.phone]
+        phones: [ ...state.phones, action.phone ]
       }
     case 'ADD_TO_CART':
       const addedPhone = state.phones.find((phone) => action.id === phone.id);
