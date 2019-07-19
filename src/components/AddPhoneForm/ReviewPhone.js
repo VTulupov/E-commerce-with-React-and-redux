@@ -25,7 +25,7 @@ const ReviewPhone = ({ phoneInfo, phoneStats }) => {
   const classes = useStyles();
 
   return (
-    <Fragment>
+    <div className="custom-ui">
       <Typography component="h1" variant="h6" className={classes.gutterBottom} >
         Review your phone
       </Typography>
@@ -71,7 +71,7 @@ const ReviewPhone = ({ phoneInfo, phoneStats }) => {
         </Grid>
       </Grid>
 
-    </Fragment>
+    </div>
   )
 }
 
