@@ -32,11 +32,12 @@ const PhoneGrid = () => {
       <div className="pagination">
         <ul>
           {
-            pageNumbers.map((number) => (
+            filteredPhones.length > 12 ? pageNumbers.map((number) => (
               <li className={currentPage === number ? 'active' : ''} key={number} onClick={() => paginate(number)}>
                 {number}
               </li>
-            ))
+            )) : 
+            null
           }
           <div className={"bar"}></div>
         </ul>

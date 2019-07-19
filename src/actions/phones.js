@@ -1,3 +1,22 @@
+import uuid from 'uuid/v4';
+
+export const addNewPhone = ({ brand = '', name = '', price = 0, description = '', size = '', resolution = '', GPU = '', CPU = '', camera = '', battery = '' } = {}) => ({
+  type: 'ADD_NEW_PHONE',
+  id: uuid(),
+  brand,
+  name,
+  price,
+  description,
+  stats: {
+    size,
+    resolution,
+    GPU,
+    CPU,
+    camera,
+    battery
+  }
+})
+
 export const addToCart = (id) => ({
   type: 'ADD_TO_CART',
   id

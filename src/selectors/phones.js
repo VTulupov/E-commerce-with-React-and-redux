@@ -5,6 +5,15 @@ export const getCartState = state => state.phonesReducer.cart;
 
 export const getCartTotal = state => state.phonesReducer.total;
 
+export const getAllPhoneBrands = state => state.phonesReducer.phones
+    .map((phone) => phone.brand)
+    .reduce((unique, brand) => unique.includes(brand) ? unique : [...unique, brand], [])
+    .sort((a, b) => {
+        const textA = a.toUpperCase();
+        const textB = b.toUpperCase();
+        return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+    });
+
 export const getFilteredPhones = state => {
     const { phonesReducer: { phones }, filters } = state;
     return phones.filter((phone) => {

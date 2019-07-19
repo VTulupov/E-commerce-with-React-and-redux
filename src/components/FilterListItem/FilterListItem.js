@@ -2,10 +2,11 @@ import React, { Fragment } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import './FilterListItem.scss';
 import { setCheckboxFilter, removeCheckboxFilter } from '../../actions/filters';
-import { getAllPhones } from '../../selectors/phones';
+import { getAllPhones, getAllPhoneBrands } from '../../selectors/phones';
 
 const FilterListItem = () => {
   const phones = useSelector(getAllPhones);
+  const phoneBrands = useSelector(getAllPhoneBrands);
   const dispatch = useDispatch();
 
   const handleFilterBrand = (e) => {
@@ -22,10 +23,6 @@ const FilterListItem = () => {
   phones.forEach(phone => {
     brandsItemsCount[phone.brand] = brandsItemsCount[phone.brand] + 1 || 1;
   })
-
-  const phoneBrands = phones
-    .map((phone) => phone.brand)
-    .reduce((unique, brand) => unique.includes(brand) ? unique : [...unique, brand], [])
 
   return (
     <Fragment>

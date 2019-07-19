@@ -22,7 +22,7 @@ const phonesDefaultState = {
       id: uuid(),
       brand: 'Xiaomi',
       name: `Redmi K20 Pro`,
-      price: 130,
+      price: 350,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
       {
@@ -38,7 +38,7 @@ const phonesDefaultState = {
       id: uuid(),
       brand: 'Xiaomi',
       name: `Mi 9t`,
-      price: 130,
+      price: 300,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
       {
@@ -70,7 +70,7 @@ const phonesDefaultState = {
       id: uuid(),
       brand: 'Samsung',
       name: `Galaxy S10+`,
-      price: 130,
+      price: 120,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
       {
@@ -86,7 +86,7 @@ const phonesDefaultState = {
       id: uuid(),
       brand: 'Samsung',
       name: `Galaxy A70`,
-      price: 130,
+      price: 330,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
       {
@@ -102,7 +102,7 @@ const phonesDefaultState = {
       id: uuid(),
       brand: 'Samsung',
       name: `Galaxy Note9`,
-      price: 130,
+      price: 650,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
       {
@@ -118,7 +118,7 @@ const phonesDefaultState = {
       id: uuid(),
       brand: 'Huawei',
       name: `P30 Pro`,
-      price: 130,
+      price: 760,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
       {
@@ -134,7 +134,7 @@ const phonesDefaultState = {
       id: uuid(),
       brand: 'Huawei',
       name: `Mate 20 Pro`,
-      price: 130,
+      price: 580,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
       {
@@ -150,7 +150,7 @@ const phonesDefaultState = {
       id: uuid(),
       brand: 'Huawei',
       name: `P20 Lite`,
-      price: 130,
+      price: 200,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
       {
@@ -166,7 +166,7 @@ const phonesDefaultState = {
       id: uuid(),
       brand: 'Huawei',
       name: `P30`,
-      price: 130,
+      price: 550,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
       {
@@ -182,7 +182,7 @@ const phonesDefaultState = {
       id: uuid(),
       brand: 'Huawei',
       name: `Y9 Prime`,
-      price: 130,
+      price: 220,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
       {
@@ -198,7 +198,7 @@ const phonesDefaultState = {
       id: uuid(),
       brand: 'Apple',
       name: `Iphone 7 Plus`,
-      price: 130,
+      price: 690,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
       {
@@ -214,7 +214,7 @@ const phonesDefaultState = {
       id: uuid(),
       brand: 'Apple',
       name: `Iphone X`,
-      price: 130,
+      price: 1000,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
       {
@@ -230,7 +230,7 @@ const phonesDefaultState = {
       id: uuid(),
       brand: 'Apple',
       name: `Iphone 6s`,
-      price: 130,
+      price: 500,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
       {
@@ -246,7 +246,7 @@ const phonesDefaultState = {
       id: uuid(),
       brand: 'Apple',
       name: `Iphone 8 Plus`,
-      price: 130,
+      price: 770,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
       {
@@ -262,7 +262,7 @@ const phonesDefaultState = {
       id: uuid(),
       brand: 'Lenovo',
       name: `Z6 Pro`,
-      price: 130,
+      price: 400,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
       {
@@ -278,7 +278,7 @@ const phonesDefaultState = {
       id: uuid(),
       brand: 'Lenovo',
       name: `A6000`,
-      price: 130,
+      price: 100,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
       {
@@ -294,7 +294,7 @@ const phonesDefaultState = {
       id: uuid(),
       brand: 'Lenovo',
       name: `A7000`,
-      price: 130,
+      price: 150,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
       {
@@ -310,7 +310,7 @@ const phonesDefaultState = {
       id: uuid(),
       brand: 'HTC',
       name: `U19e`,
-      price: 130,
+      price: 420,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
       {
@@ -326,7 +326,7 @@ const phonesDefaultState = {
       id: uuid(),
       brand: 'HTC',
       name: `10`,
-      price: 130,
+      price: 300,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eum magnam nesciunt esse nihil pariatur cupiditate fugit aut inventore minus facilis provident, nisi fuga! Dicta, saepe. Incidunt ipsum voluptatum odio',
       stats:
       {
@@ -345,6 +345,11 @@ const phonesDefaultState = {
 
 const phonesReducer = (state = phonesDefaultState, action) => {
   switch (action.type) {
+    case 'ADD_NEW_PHONE': 
+      return {
+        ...state,
+        phones: [...state.phones, action.phone]
+      }
     case 'ADD_TO_CART':
       const addedPhone = state.phones.find((phone) => action.id === phone.id);
       const existingPhone = state.cart.find((existingPhone) => action.id === existingPhone.id);
