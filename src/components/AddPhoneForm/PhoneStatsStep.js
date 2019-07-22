@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const PhoneStatsStep = (props) => {
+const PhoneStatsStep = ({ phoneStats, handlePhoneStats }) => {
   const classes = useStyles();
 
   return (
@@ -22,67 +22,67 @@ const PhoneStatsStep = (props) => {
         <Grid item xs={12} sm={6}>
           <TextField
             required
-            id="phoneSize"
-            name="phoneSize"
+            id="size"
+            name="size"
             label="Phone Size"
             fullWidth
-            value={props.phoneStats.size}
-            onChange={props.handleSize}
+            value={phoneStats.size || ''}
+            onChange={handlePhoneStats}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
             required
-            id="phoneCamera"
-            name="phoneCamera"
+            id="camera"
+            name="camera"
             label="Phone Camera"
             fullWidth
-            value={props.phoneStats.camera}
-            onChange={props.handleCamera}
+            value={phoneStats.camera || ''}
+            onChange={handlePhoneStats}
           />
         </Grid>
         <Grid item xs={12}>
           <TextField
             required
-            id="phoneResolution"
-            name="phoneResolution"
+            id="resolution"
+            name="resolution"
             label="Phone Resolution"
             fullWidth
-            value={props.phoneStats.resolution}
-            onChange={props.handleResolution}
+            value={phoneStats.resolution || ''}
+            onChange={handlePhoneStats}
           />
         </Grid>
         <Grid item xs={12}>
           <TextField
             required
-            id="phoneCPU"
-            name="phoneCPU"
+            id="CPU"
+            name="CPU"
             label="Phone CPU"
             fullWidth
-            value={props.phoneStats.CPU}
-            onChange={props.handleCPU}
+            value={phoneStats.CPU || ''}
+            onChange={handlePhoneStats}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
             required
-            id="phoneGPU"
-            name="phoneGPU"
+            id="GPU"
+            name="GPU"
             label="Phone GPU"
             fullWidth
-            value={props.phoneStats.GPU}
-            onChange={props.handleGPU}
+            value={phoneStats.GPU || ''}
+            onChange={handlePhoneStats}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
             required
-            id="phoneBattery"
-            name="phoneBattery"
+            id="battery"
+            name="battery"
             label="Phone Battery"
             fullWidth
-            value={props.phoneStats.battery}
-            onChange={props.handleBattery}
+            value={phoneStats.battery || ''}
+            onChange={handlePhoneStats}
           />
         </Grid>
       </Grid> 

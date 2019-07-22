@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const PhoneNameStep = ({ phoneBrands, phoneInfo, handleSelect, handleName, handlePrice, handleDescription }) => {
+const PhoneNameStep = ({ phoneBrands, phoneInfo, handlePhoneInfo }) => {
   const classes = useStyles(); 
 
   return (
@@ -28,8 +28,8 @@ const PhoneNameStep = ({ phoneBrands, phoneInfo, handleSelect, handleName, handl
             <InputLabel htmlFor="phone-brand">Brand *</InputLabel>
             <Select
               required
-              value={phoneInfo.brand}
-              onChange={handleSelect}
+              value={phoneInfo.brand || ''}
+              onChange={handlePhoneInfo}
               inputProps={{
                 name: 'brand',
                 id: 'phone-brand'
@@ -48,39 +48,39 @@ const PhoneNameStep = ({ phoneBrands, phoneInfo, handleSelect, handleName, handl
         <Grid item xs={12} sm={6}>
           <TextField
             required
-            id="phoneName"
-            name="phoneName"
+            id="name"
+            name="name"
             label="Phone name"
             fullWidth
             autoComplete="lname"
-            value={phoneInfo.name}
-            onChange={handleName}
+            value={phoneInfo.name || ''}
+            onChange={handlePhoneInfo}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
             required
-            id="phonePrice"
-            name="phonePrice"
+            id="price"
+            name="price"
             label="Phone price"
             fullWidth
             autoComplete="lname"
-            value={phoneInfo.price}
-            onChange={handlePrice}
+            value={phoneInfo.price || ''}
+            onChange={handlePhoneInfo}
           />
         </Grid>
         <Grid item xs={12}>
           <TextField
             required
             label='Phone Description'
-            id="phoneDescription"
-            name="phoneDescription"
+            id="description"
+            name="description"
             multiline={true}
             rows={6}
             rowsMax={6}
             fullWidth
-            value={phoneInfo.description}
-            onChange={handleDescription}
+            value={phoneInfo.description || ''}
+            onChange={handlePhoneInfo}
           />
         </Grid>
       </Grid>

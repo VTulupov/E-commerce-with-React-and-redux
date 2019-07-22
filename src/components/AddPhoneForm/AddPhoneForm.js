@@ -60,32 +60,21 @@ const AddPhoneForm = ({ history }) => {
   const phoneBrands = useSelector(getAllPhoneBrands);
   const dispatch = useDispatch();
 
-  const [ brand, setBrand ] = useState('');
-  const [ name, setName ] = useState('');
-  const [ price, setPrice ] = useState('');
-  const [ description, setDescription ] = useState('');
+  const [phoneInfo, setPhoneInfo] = useState({});
+  const [phoneStats, setPhoneStats] = useState({});
 
-  const handleSelect = (e) => setBrand(e.target.value);
-  const handleName = (e) => setName(e.target.value);
-  const handlePrice = (e) => setPrice(parseInt(e.target.value, 10))
-  const handleDescription = (e) => setDescription(e.target.value);
+  const handlePhoneInfo = (e) => {
+    e.persist();
+    setPhoneInfo({ ...phoneInfo, [e.target.name]: e.target.value });
+  }
 
-  const [size, setSize] = useState('');
-  const [camera, setCamera] = useState('');
-  const [resolution, setResolution] = useState('');
-  const [CPU, setCPU] = useState('');
-  const [GPU, setGPU] = useState('');
-  const [battery, setBattery] = useState('');
+  const handlePhoneStats = (e) => {
+    e.persist();
+    setPhoneStats({ ...phoneStats, [e.target.name]: e.target.value });
+  }
 
-  const handleSize = e => setSize(e.target.value);
-  const handleCamera = e => setCamera(e.target.value);
-  const handleResolution = e => setResolution(e.target.value);
-  const handleCPU = e => setCPU(e.target.value);
-  const handleGPU = e => setGPU(e.target.value);
-  const handleBattery = e => setBattery(e.target.value);
-
-  const phoneInfo = { brand, name, price, description }
-  const phoneStats = { size, camera, resolution, CPU, GPU, battery }
+  const { brand, name, price, description } = phoneInfo
+  const { size, camera, resolution, CPU, GPU, battery } = phoneStats
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
@@ -119,21 +108,9 @@ const AddPhoneForm = ({ history }) => {
   function getStepContent(step) {
     switch (step) {
       case 0:
-        return <PhoneNameStep phoneBrands={phoneBrands} phoneInfo={phoneInfo} 
-          handleSelect={handleSelect}
-          handleName={handleName}
-          handlePrice={handlePrice}
-          handleDescription={handleDescription}
-        />;
+        return <PhoneNameStep phoneBrands={phoneBrands} phoneInfo={phoneInfo} handlePhoneInfo={handlePhoneInfo} />;
       case 1:
-        return <PhoneStatsStep phoneStats={phoneStats}
-          handleSize={handleSize}
-          handleCamera={handleCamera}
-          handleResolution={handleResolution}
-          handleCPU={handleCPU}
-          handleGPU={handleGPU}
-          handleBattery={handleBattery}
-        />;
+        return <PhoneStatsStep phoneStats={phoneStats} handlePhoneStats={handlePhoneStats} />;
       case 2:
         return <ReviewPhone phoneInfo={phoneInfo} phoneStats={phoneStats} />;
       default:

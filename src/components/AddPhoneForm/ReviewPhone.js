@@ -37,7 +37,7 @@ const ReviewPhone = ({ phoneInfo, phoneStats }) => {
                 <img src={phoneImg} alt="phone" className='imgBox--img' />
               </div>
             </Grid>
-            <Grid item xs={12} direction="row" className='title'>
+            <Grid item xs={12} className='title'>
               <Typography gutterBottom variant="h6">{phoneInfo.brand} {phoneInfo.name} ${phoneInfo.price}</Typography>
             </Grid>
           </Grid>

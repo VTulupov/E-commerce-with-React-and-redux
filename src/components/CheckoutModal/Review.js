@@ -74,7 +74,7 @@ const Review = () => {
               <Typography gutterBottom>Card Type</Typography>
             </Grid>
             <Grid item xs={6}>
-              <Typography gutterBottom>Visa</Typography>
+              <Typography gutterBottom>Master Card</Typography>
             </Grid> 
             <Grid item xs={6}>
               <Typography gutterBottom>Card Holder</Typography>
