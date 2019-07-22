@@ -14,7 +14,7 @@ import Review from './Review';
 import uuid from 'uuid/v4'
 import { clearCart } from '../../actions/phones';
 import { useDispatch } from 'react-redux';
-import { addShippingAddress, addPaymentMethod, clearInfo } from '../../actions/payment';
+import { addPaymentInfo, clearInfo } from '../../actions/payment';
 import { useForm } from '../../hooks/useForm.js/useForm';
 
 const useStyles = makeStyles(theme => ({
@@ -43,25 +43,6 @@ const CheckoutModal = ({ modal, closeModal }) => {
   let [ activeStep, setActiveStep ] = useState(0);
   const steps = ['Shipping address', 'Payment details', 'Review your order'];
 
-  const submitFormCallback = () => {
-    if (activeStep === 2) {
-      dispatch(addShippingAddress({
-        values
-      }))
-      dispatch(addPaymentMethod({
-        values
-      }))
-      handleNext();
-    } else {
-      handleNext();
-    }
-  }
-
-  const { values, errors, onChange, onSubmit } = useForm(
-    submitFormCallback, 
-    { firstName: '', lastName: '', address: '', city: '', region: '', zip: '', country: '', cardName: '', cardNumber: '', expiryDate: '', CVV: '' }
-    )
-
   const handleNext = () => {
     setActiveStep(activeStep + 1);
   };
@@ -69,6 +50,31 @@ const CheckoutModal = ({ modal, closeModal }) => {
   const handleBack = () => {
     setActiveStep(activeStep - 1);
   };
+
+  const submitFormCallback = () => {
+    if (activeStep === 2) {
+      dispatch(addPaymentInfo({
+        firstName,
+        lastName,
+        address,
+        city,
+        region,
+        zip,
+        country,
+        cardName,
+        cardNumber,
+        expiryDate,
+        CVV
+      }))
+      handleNext();
+    } else {
+      handleNext();
+    }
+  }
+
+  const { values, errors, onChange, onSubmit } = useForm(submitFormCallback)
+
+  const { firstName, lastName, address, city, region, zip, country, cardName, cardNumber, expiryDate, CVV } = values;
 
   const resetSteps = () => {
     if (activeStep === steps.length) {

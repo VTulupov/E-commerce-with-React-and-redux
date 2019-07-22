@@ -1,3 +1,1 @@
-export const getAddressInfo = (state) => state.paymentInfo.shippingAddress;
-
-export const getPaymentMethod = (state) => state.paymentInfo.paymentMethod;
+export const getPaymentInfo = (state) => state.paymentInfo.paymentInfo; 

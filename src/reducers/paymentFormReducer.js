@@ -1,19 +1,13 @@
 const paymentFormReducerDefaultState = {
-  shippingAddress: {},
-  paymentMethod: {}
+  paymentInfo: {}
 }
 
 const paymentFormReducer = (state = paymentFormReducerDefaultState, action) => {
   switch (action.type) {
-    case 'ADD_SHIPPING_ADDRESS':
+    case 'ADD_PAYMENT_INFO':
       return {
         ...state,
-        shippingAddress: action.shippingAddress
-      }
-    case 'ADD_PAYMENT_METHOD':
-      return {
-        ...state,
-        paymentMethod: action.paymentMethod
+        paymentInfo: action.paymentInfo
       }
     case 'CLEAR_INFO':
       return {

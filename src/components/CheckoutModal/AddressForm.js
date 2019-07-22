@@ -4,7 +4,6 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 
 const AddressForm = ({ values, onChange }) => {
-
   return (
     <Fragment>
       <Typography variant="h6" gutterBottom>
@@ -15,10 +14,10 @@ const AddressForm = ({ values, onChange }) => {
           <TextField
             required
             id="firstName"
-            name="First Name"
+            name="firstName"
             label="First name"
             fullWidth
-            value={values.firstName}
+            value={values.firstName || ''}
             onChange={onChange}
           />
         </Grid>
@@ -26,11 +25,11 @@ const AddressForm = ({ values, onChange }) => {
           <TextField
             required
             id="lastName"
-            name="Last Name"
+            name="lastName"
             label="Last name"
             fullWidth
             autoComplete="lname"
-            value={values.lastName}
+            value={values.lastName || ''}
             onChange={onChange}
           />
         </Grid>
@@ -38,10 +37,10 @@ const AddressForm = ({ values, onChange }) => {
           <TextField
             required
             id="address1"
-            name="Address"
+            name="address"
             label="Address line 1"
             fullWidth
-            value={values.address}
+            value={values.address || ''}
             onChange={onChange}
           />
         </Grid>
@@ -49,20 +48,20 @@ const AddressForm = ({ values, onChange }) => {
           <TextField
             required
             id="city"
-            name="City"
+            name="city"
             label="City"
             fullWidth
-            value={values.city}
+            value={values.city || ''}
             onChange={onChange}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField 
             id="state" 
-            name="Region" 
+            name="region" 
             label="State/Province/Region" 
             fullWidth
-            value={values.region}
+            value={values.region || ''}
             onChange={onChange} 
             />
         </Grid>
@@ -70,10 +69,10 @@ const AddressForm = ({ values, onChange }) => {
           <TextField
             required
             id="zip"
-            name="Zip"
+            name="zip"
             label="Zip / Postal code"
             fullWidth
-            value={values.zip}
+            value={values.zip || ''}
             onChange={onChange}
           />
         </Grid>
@@ -81,10 +80,10 @@ const AddressForm = ({ values, onChange }) => {
           <TextField
             required
             id="country"
-            name="Country"
+            name="country"
             label="Country"
             fullWidth
-            value={values.country}
+            value={values.country || ''}
             onChange={onChange}
           />
         </Grid>

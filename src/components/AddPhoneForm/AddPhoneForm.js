@@ -12,6 +12,7 @@ import PhoneNameStep from './PhoneNameStep';
 import PhoneStatsStep from './PhoneStatsStep';
 import { getAllPhoneBrands } from '../../selectors/phones';
 import { addNewPhone } from '../../actions/phones';
+import { useForm } from '../../hooks/useForm.js/useForm';
 
 const useStyles = makeStyles(theme => ({
   layout: {
@@ -60,22 +61,6 @@ const AddPhoneForm = ({ history }) => {
   const phoneBrands = useSelector(getAllPhoneBrands);
   const dispatch = useDispatch();
 
-  const [phoneInfo, setPhoneInfo] = useState({});
-  const [phoneStats, setPhoneStats] = useState({});
-
-  const handlePhoneInfo = (e) => {
-    e.persist();
-    setPhoneInfo({ ...phoneInfo, [e.target.name]: e.target.value });
-  }
-
-  const handlePhoneStats = (e) => {
-    e.persist();
-    setPhoneStats({ ...phoneStats, [e.target.name]: e.target.value });
-  }
-
-  const { brand, name, price, description } = phoneInfo
-  const { size, camera, resolution, CPU, GPU, battery } = phoneStats
-
   const handleNext = () => {
     setActiveStep(activeStep + 1);
   };
@@ -84,8 +69,7 @@ const AddPhoneForm = ({ history }) => {
     setActiveStep(activeStep - 1);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const submitFormCallback = () => {
     if (activeStep === steps.length - 1) {
       dispatch(addNewPhone({
         brand,
@@ -105,14 +89,18 @@ const AddPhoneForm = ({ history }) => {
     }
   }
 
+  const { values, errors, onChange, onSubmit } = useForm(submitFormCallback)
+
+  const { brand, name, price, description, size, resolution, GPU, CPU, camera, battery } = values;
+
   function getStepContent(step) {
     switch (step) {
       case 0:
-        return <PhoneNameStep phoneBrands={phoneBrands} phoneInfo={phoneInfo} handlePhoneInfo={handlePhoneInfo} />;
+        return <PhoneNameStep phoneBrands={phoneBrands} values={values} errors={errors} onChange={onChange} />;
       case 1:
-        return <PhoneStatsStep phoneStats={phoneStats} handlePhoneStats={handlePhoneStats} />;
+        return <PhoneStatsStep values={values} errors={errors} onChange={onChange} />;
       case 2:
-        return <ReviewPhone phoneInfo={phoneInfo} phoneStats={phoneStats} />;
+        return <ReviewPhone values={values} />;
       default:
         throw new Error('Unknown step');
     }
@@ -130,7 +118,7 @@ const AddPhoneForm = ({ history }) => {
             ))}
           </Stepper>
             <React.Fragment>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={onSubmit}>
               {getStepContent(activeStep)}
             
               <div className={classes.buttons}>

@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const PhoneNameStep = ({ phoneBrands, phoneInfo, handlePhoneInfo }) => {
+const PhoneNameStep = ({ phoneBrands, values, onChange }) => {
   const classes = useStyles(); 
 
   return (
@@ -28,8 +28,8 @@ const PhoneNameStep = ({ phoneBrands, phoneInfo, handlePhoneInfo }) => {
             <InputLabel htmlFor="phone-brand">Brand *</InputLabel>
             <Select
               required
-              value={phoneInfo.brand || ''}
-              onChange={handlePhoneInfo}
+              value={values.brand || ''}
+              onChange={onChange}
               inputProps={{
                 name: 'brand',
                 id: 'phone-brand'
@@ -53,8 +53,8 @@ const PhoneNameStep = ({ phoneBrands, phoneInfo, handlePhoneInfo }) => {
             label="Phone name"
             fullWidth
             autoComplete="lname"
-            value={phoneInfo.name || ''}
-            onChange={handlePhoneInfo}
+            value={values.name || ''}
+            onChange={onChange}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -65,8 +65,8 @@ const PhoneNameStep = ({ phoneBrands, phoneInfo, handlePhoneInfo }) => {
             label="Phone price"
             fullWidth
             autoComplete="lname"
-            value={phoneInfo.price || ''}
-            onChange={handlePhoneInfo}
+            value={values.price || ''}
+            onChange={onChange}
           />
         </Grid>
         <Grid item xs={12}>
@@ -79,8 +79,8 @@ const PhoneNameStep = ({ phoneBrands, phoneInfo, handlePhoneInfo }) => {
             rows={6}
             rowsMax={6}
             fullWidth
-            value={phoneInfo.description || ''}
-            onChange={handlePhoneInfo}
+            value={values.description || ''}
+            onChange={onChange}
           />
         </Grid>
       </Grid>

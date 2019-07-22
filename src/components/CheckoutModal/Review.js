@@ -7,7 +7,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Grid from '@material-ui/core/Grid';
 import { useSelector } from "react-redux";
 import { getCartState, getCartTotal } from './../../selectors/phones'
-import { getAddressInfo, getPaymentMethod } from '../../selectors/paymentInfo';
 
 const useStyles = makeStyles(theme => ({
   listItem: {
@@ -21,12 +20,10 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Review = () => {
+const Review = ({ values }) => {
   const classes = useStyles();
   const products = useSelector(getCartState);
   const total = useSelector(getCartTotal);
-  const addressInfo = useSelector(getAddressInfo);
-  const paymentInfo = useSelector(getPaymentMethod);
 
   return (
     <Fragment>
@@ -52,16 +49,16 @@ const Review = () => {
           <Typography gutterBottom variant="h6" className={classes.title} >Shipping</Typography>
           <Grid container>
             <Grid item xs={12}>
-              <Typography gutterBottom>{addressInfo.firstName} {addressInfo.lastName}</Typography>
+              <Typography gutterBottom>{values.firstName} {values.lastName}</Typography>
             </Grid>
             <Grid item xs={12}>
-              <Typography gutterBottom>{addressInfo.address}</Typography>
+              <Typography gutterBottom>{values.address}</Typography>
             </Grid>
             <Grid item xs={12}>
-              <Typography gutterBottom>{addressInfo.city}</Typography>
+              <Typography gutterBottom>{values.city}</Typography>
             </Grid>
             <Grid item xs={12}>
-              <Typography gutterBottom>{addressInfo.country}</Typography>
+              <Typography gutterBottom>{values.country}</Typography>
             </Grid>
           </Grid>
         </Grid>
@@ -80,19 +77,19 @@ const Review = () => {
               <Typography gutterBottom>Card Holder</Typography>
             </Grid>
             <Grid item xs={6}>
-              <Typography gutterBottom>{paymentInfo.cardName}</Typography>
+              <Typography gutterBottom>{values.cardName}</Typography>
             </Grid>
             <Grid item xs={6}>
               <Typography gutterBottom>Card number</Typography>
             </Grid>
             <Grid item xs={6}>
-              <Typography gutterBottom>{paymentInfo.cardNumber}</Typography>
+              <Typography gutterBottom>{values.cardNumber}</Typography>
             </Grid>
             <Grid item xs={6}>
               <Typography gutterBottom>Expiry Date</Typography>
             </Grid>
             <Grid item xs={6}>
-              <Typography gutterBottom>{paymentInfo.expiryDate}</Typography>
+              <Typography gutterBottom>{values.expiryDate}</Typography>
             </Grid>
           </Grid>
         </Grid>

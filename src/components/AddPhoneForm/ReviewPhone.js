@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const ReviewPhone = ({ phoneInfo, phoneStats }) => {
+const ReviewPhone = ({ values }) => {
   const classes = useStyles();
 
   return (
@@ -38,7 +38,7 @@ const ReviewPhone = ({ phoneInfo, phoneStats }) => {
               </div>
             </Grid>
             <Grid item xs={12} className='title'>
-              <Typography gutterBottom variant="h6">{phoneInfo.brand} {phoneInfo.name} ${phoneInfo.price}</Typography>
+              <Typography gutterBottom variant="h6">{values.brand} {values.name} ${values.price}</Typography>
             </Grid>
           </Grid>
         </Grid>
@@ -46,13 +46,13 @@ const ReviewPhone = ({ phoneInfo, phoneStats }) => {
         <Grid item container direction="column"  xs={12} sm={6}>
           <Grid container>
             {
-              Object.entries(phoneStats).map(([key, value]) => {
+              Object.entries(values).map(([key, value]) => {
                 return (
                   <Fragment key={key}>
-                    <Grid item xs={12}>
+                    <Grid item xs={12} className='grid-key'>
                       <Typography className='key'>{key}</Typography>
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid item xs={12} className='grid-value'>
                       <Typography gutterBottom className='value'>{value.toString()}</Typography>
                     </Grid>
                   </Fragment>
@@ -67,7 +67,7 @@ const ReviewPhone = ({ phoneInfo, phoneStats }) => {
 
       <Grid item container direction="column" xs={12}>
         <Grid item xs={12} className={classes.marginTopBig}>
-          <Typography gutterBottom>{phoneInfo.description}</Typography>
+          <Typography gutterBottom>{values.description}</Typography>
         </Grid>
       </Grid>
 

@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const PhoneStatsStep = ({ phoneStats, handlePhoneStats }) => {
+const PhoneStatsStep = ({ values, onChange }) => {
   const classes = useStyles();
 
   return (
@@ -26,8 +26,8 @@ const PhoneStatsStep = ({ phoneStats, handlePhoneStats }) => {
             name="size"
             label="Phone Size"
             fullWidth
-            value={phoneStats.size || ''}
-            onChange={handlePhoneStats}
+            value={values.size || ''}
+            onChange={onChange}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -37,8 +37,8 @@ const PhoneStatsStep = ({ phoneStats, handlePhoneStats }) => {
             name="camera"
             label="Phone Camera"
             fullWidth
-            value={phoneStats.camera || ''}
-            onChange={handlePhoneStats}
+            value={values.camera || ''}
+            onChange={onChange}
           />
         </Grid>
         <Grid item xs={12}>
@@ -48,8 +48,8 @@ const PhoneStatsStep = ({ phoneStats, handlePhoneStats }) => {
             name="resolution"
             label="Phone Resolution"
             fullWidth
-            value={phoneStats.resolution || ''}
-            onChange={handlePhoneStats}
+            value={values.resolution || ''}
+            onChange={onChange}
           />
         </Grid>
         <Grid item xs={12}>
@@ -59,8 +59,8 @@ const PhoneStatsStep = ({ phoneStats, handlePhoneStats }) => {
             name="CPU"
             label="Phone CPU"
             fullWidth
-            value={phoneStats.CPU || ''}
-            onChange={handlePhoneStats}
+            value={values.CPU || ''}
+            onChange={onChange}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -70,8 +70,8 @@ const PhoneStatsStep = ({ phoneStats, handlePhoneStats }) => {
             name="GPU"
             label="Phone GPU"
             fullWidth
-            value={phoneStats.GPU || ''}
-            onChange={handlePhoneStats}
+            value={values.GPU || ''}
+            onChange={onChange}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -81,8 +81,8 @@ const PhoneStatsStep = ({ phoneStats, handlePhoneStats }) => {
             name="battery"
             label="Phone Battery"
             fullWidth
-            value={phoneStats.battery || ''}
-            onChange={handlePhoneStats}
+            value={values.battery || ''}
+            onChange={onChange}
           />
         </Grid>
       </Grid> 

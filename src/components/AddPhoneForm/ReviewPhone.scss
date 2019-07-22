@@ -24,3 +24,15 @@
     width: 80%;
   }
 }
+
+.grid-key:nth-child(-n+8) {
+ display: none;
+}
+
+.grid-value:nth-child(-n+8) {
+ display: none;
+}
+
+// .value:nth-child(-n+4) {
+//   display: none;
+// }

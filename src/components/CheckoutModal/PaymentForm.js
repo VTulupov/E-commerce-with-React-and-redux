@@ -14,9 +14,10 @@ const PaymentForm = ({ values, onChange }) => {
           <TextField 
             required 
             id="cardName" 
+            name="cardName"
             label="Name on card" 
             fullWidth 
-            value={values.cardName}
+            value={values.cardName || ''}
             onChange={onChange}
             />
         </Grid>
@@ -24,9 +25,10 @@ const PaymentForm = ({ values, onChange }) => {
           <TextField 
             required 
             id="cardNumber" 
+            name="cardNumber"
             label="Card number" 
             fullWidth
-            value={values.cardNumber}
+            value={values.cardNumber || ''}
             onChange={onChange}
             />
         </Grid>
@@ -34,9 +36,10 @@ const PaymentForm = ({ values, onChange }) => {
           <TextField 
             required 
             id="expDate" 
+            name="expiryDate"
             label="Expiry date" 
             fullWidth
-            value={values.expiryDate}
+            value={values.expiryDate || ''}
             onChange={onChange}
             />
         </Grid>
@@ -44,10 +47,11 @@ const PaymentForm = ({ values, onChange }) => {
           <TextField
             required
             id="cvv"
+            name="CVV"
             label="CVV"
             helperText="Last three digits on signature strip"
             fullWidth
-            value={values.CVV}
+            value={values.CVV || ''}
             onChange={onChange}
           />
         </Grid>
