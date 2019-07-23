@@ -16,6 +16,7 @@ import { clearCart } from '../../actions/phones';
 import { useDispatch } from 'react-redux';
 import { addPaymentInfo, clearInfo } from '../../actions/payment';
 import { useForm } from '../../hooks/useForm.js/useForm';
+import validateForm from './CheckoutFormValidtation';
 
 const useStyles = makeStyles(theme => ({
   stepper: {
@@ -72,7 +73,7 @@ const CheckoutModal = ({ modal, closeModal }) => {
     }
   }
 
-  const { values, errors, onChange, onSubmit } = useForm(submitFormCallback)
+  const { values, errors, onChange, onSubmit } = useForm(submitFormCallback, validateForm(activeStep));
 
   const { firstName, lastName, address, city, region, zip, country, cardName, cardNumber, expiryDate, CVV } = values;
 
@@ -111,60 +112,57 @@ const CheckoutModal = ({ modal, closeModal }) => {
     >
       <CssBaseline />
       <main >
-        <Typography component="h1" variant="h4" align="center">
-            CHECKOUT
-        </Typography>
-          <Stepper activeStep={activeStep} className={classes.stepper}>
-            {steps.map(label => (
-              <Step key={label}>
-                <StepLabel>{label}</StepLabel>
-              </Step>
-            ))}
-          </Stepper>
-          <Fragment>
-            {activeStep === steps.length ? (
-              <Fragment>
-                <Typography variant="h5" gutterBottom>
-                  Thank you for your order.
-                </Typography>
-                <Typography variant="subtitle1">
-                Your order number is <b>#{uuid().substring(0, 7)}</b> We have emailed your order confirmation, and will
-                  send you an update when your order has shipped.
-                </Typography>
-                <div className={classes.buttons + ' ' + classes.marginTopBig}>
-                  <Button 
+        <Stepper activeStep={activeStep} className={classes.stepper}>
+          {steps.map(label => (
+            <Step key={label}>
+              <StepLabel>{label}</StepLabel>
+            </Step>
+          ))}
+        </Stepper>
+        <Fragment>
+          {activeStep === steps.length ? (
+            <Fragment>
+              <Typography variant="h5" gutterBottom>
+                Thank you for your order.
+              </Typography>
+              <Typography variant="subtitle1">
+              Your order number is <b>#{uuid().substring(0, 7)}</b> We have emailed your order confirmation, and will
+                send you an update when your order has shipped.
+              </Typography>
+              <div className={classes.buttons + ' ' + classes.marginTopBig}>
+                <Button 
+                  variant="contained"
+                  color="primary"
+                  onClick={resetSteps}
+                >
+                Close
+                </Button>
+              </div>
+            </Fragment>
+          ) : (
+              <form onSubmit={onSubmit} noValidate autoComplete='off'>
+                {
+                  getStepContent(activeStep)
+                }
+                <div className={classes.buttons}>
+                  {activeStep !== 0 && (
+                    <Button onClick={handleBack} className={classes.button}>
+                      Back
+                    </Button>
+                  )}
+                  <Button
                     variant="contained"
                     color="primary"
-                    onClick={resetSteps}
+                    type='submit'
+                    className={classes.button}
                   >
-                  Close
+                    {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
                   </Button>
                 </div>
-              </Fragment>
-            ) : (
-                <form onSubmit={onSubmit}>
-                  {
-                    getStepContent(activeStep)
-                  }
-                  <div className={classes.buttons}>
-                    {activeStep !== 0 && (
-                      <Button onClick={handleBack} className={classes.button}>
-                        Back
-                      </Button>
-                    )}
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      type='submit'
-                      className={classes.button}
-                    >
-                      {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
-                    </Button>
-                  </div>
-                </form>
-              )
-            }
-          </Fragment>
+              </form>
+            )
+          }
+        </Fragment>
       </main>
     </Modal>
   )

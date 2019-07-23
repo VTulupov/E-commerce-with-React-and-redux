@@ -3,7 +3,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 
-const PaymentForm = ({ values, onChange }) => {
+const PaymentForm = ({ values, onChange, errors }) => {
   return (
     <Fragment>
       <Typography variant="h6" gutterBottom>
@@ -15,7 +15,9 @@ const PaymentForm = ({ values, onChange }) => {
             required 
             id="cardName" 
             name="cardName"
-            label="Name on card" 
+            label="Name on card"
+            helperText={errors.cardName}
+            error={errors.cardName ? true : false}
             fullWidth 
             value={values.cardName || ''}
             onChange={onChange}
@@ -26,7 +28,9 @@ const PaymentForm = ({ values, onChange }) => {
             required 
             id="cardNumber" 
             name="cardNumber"
-            label="Card number" 
+            label="Card number"
+            helperText={errors.cardNumber}
+            error={errors.cardNumber ? true : false} 
             fullWidth
             value={values.cardNumber || ''}
             onChange={onChange}
@@ -37,7 +41,9 @@ const PaymentForm = ({ values, onChange }) => {
             required 
             id="expDate" 
             name="expiryDate"
-            label="Expiry date" 
+            label="Expiry date"
+            helperText={errors.expiryDate}
+            error={errors.expiryDate ? true : false}
             fullWidth
             value={values.expiryDate || ''}
             onChange={onChange}
@@ -49,7 +55,8 @@ const PaymentForm = ({ values, onChange }) => {
             id="cvv"
             name="CVV"
             label="CVV"
-            helperText="Last three digits on signature strip"
+            helperText={errors.CVV}
+            error={errors.CVV ? true : false}
             fullWidth
             value={values.CVV || ''}
             onChange={onChange}

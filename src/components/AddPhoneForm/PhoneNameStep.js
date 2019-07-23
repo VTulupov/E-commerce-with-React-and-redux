@@ -17,7 +17,6 @@ const useStyles = makeStyles(theme => ({
 
 const PhoneNameStep = ({ phoneBrands, values, onChange, errors }) => {
   const classes = useStyles(); 
-  console.log(errors);
   
   return (
     <React.Fragment>

@@ -80,7 +80,7 @@ const Review = ({ values }) => {
               <Typography gutterBottom>{values.cardName}</Typography>
             </Grid>
             <Grid item xs={6}>
-              <Typography gutterBottom>Card number</Typography>
+              <Typography gutterBottom className='break-word'>Card number</Typography>
             </Grid>
             <Grid item xs={6}>
               <Typography gutterBottom>{values.cardNumber}</Typography>

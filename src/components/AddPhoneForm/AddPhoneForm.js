@@ -90,7 +90,7 @@ const AddPhoneForm = ({ history }) => {
     }
   }
 
-  const { onChange, onSubmit, errors, values } = useForm(submitFormCallback, validateForm)
+  const { onChange, onSubmit, errors, values } = useForm(submitFormCallback, validateForm(activeStep))
 
   const { brand, name, price, description, size, resolution, GPU, CPU, camera, battery } = values;
 
