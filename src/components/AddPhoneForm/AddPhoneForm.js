@@ -13,6 +13,7 @@ import PhoneStatsStep from './PhoneStatsStep';
 import { getAllPhoneBrands } from '../../selectors/phones';
 import { addNewPhone } from '../../actions/phones';
 import { useForm } from '../../hooks/useForm.js/useForm';
+import validateForm from './formValidation';
 
 const useStyles = makeStyles(theme => ({
   layout: {
@@ -89,7 +90,7 @@ const AddPhoneForm = ({ history }) => {
     }
   }
 
-  const { values, errors, onChange, onSubmit } = useForm(submitFormCallback)
+  const { onChange, onSubmit, errors, values } = useForm(submitFormCallback, validateForm)
 
   const { brand, name, price, description, size, resolution, GPU, CPU, camera, battery } = values;
 
@@ -118,7 +119,7 @@ const AddPhoneForm = ({ history }) => {
             ))}
           </Stepper>
             <React.Fragment>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} noValidate autoComplete="off">
               {getStepContent(activeStep)}
             
               <div className={classes.buttons}>

@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const PhoneStatsStep = ({ values, onChange }) => {
+const PhoneStatsStep = ({ values, onChange, errors }) => {
   const classes = useStyles();
 
   return (
@@ -25,6 +25,8 @@ const PhoneStatsStep = ({ values, onChange }) => {
             id="size"
             name="size"
             label="Phone Size"
+            helperText={errors.size}
+            error={errors.size ? true : false}
             fullWidth
             value={values.size || ''}
             onChange={onChange}
@@ -36,6 +38,8 @@ const PhoneStatsStep = ({ values, onChange }) => {
             id="camera"
             name="camera"
             label="Phone Camera"
+            helperText={errors.camera}
+            error={errors.camera ? true : false}
             fullWidth
             value={values.camera || ''}
             onChange={onChange}
@@ -47,6 +51,8 @@ const PhoneStatsStep = ({ values, onChange }) => {
             id="resolution"
             name="resolution"
             label="Phone Resolution"
+            helperText={errors.resolution}
+            error={errors.resolution ? true : false}
             fullWidth
             value={values.resolution || ''}
             onChange={onChange}
@@ -58,6 +64,8 @@ const PhoneStatsStep = ({ values, onChange }) => {
             id="CPU"
             name="CPU"
             label="Phone CPU"
+            helperText={errors.CPU}
+            error={errors.CPU ? true : false}
             fullWidth
             value={values.CPU || ''}
             onChange={onChange}
@@ -68,6 +76,8 @@ const PhoneStatsStep = ({ values, onChange }) => {
             required
             id="GPU"
             name="GPU"
+            helperText={errors.GPU}
+            error={errors.GPU ? true : false}
             label="Phone GPU"
             fullWidth
             value={values.GPU || ''}
@@ -80,6 +90,8 @@ const PhoneStatsStep = ({ values, onChange }) => {
             id="battery"
             name="battery"
             label="Phone Battery"
+            helperText={errors.battery}
+            error={errors.battery ? true : false}
             fullWidth
             value={values.battery || ''}
             onChange={onChange}

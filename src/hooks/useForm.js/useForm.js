@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-export const useForm = (callback, initialState = {}, validate) => {
-  const [values, setValues] = useState(initialState);
+export const useForm = (callback, validate) => {
+  const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
 
   const onChange = (e) => {
@@ -11,15 +11,13 @@ export const useForm = (callback, initialState = {}, validate) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    // if (Object.keys(validate(values)).length === 0) {
-    //   
-    //   setValues(initialState);
-    // } else {
-    //   setErrors(validate(values));
-    // }
-    callback();
+    if (Object.keys(validate(values)).length === 0) {
+      callback();
+    } else {
+      setErrors(validate(values))
+    }
   }
-
+  
   return {
     onChange,
     onSubmit,

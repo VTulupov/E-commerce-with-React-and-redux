@@ -7,6 +7,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import FormHelperText from '@material-ui/core/FormHelperText'
 
 const useStyles = makeStyles(theme => ({
   gutterBottom: {
@@ -14,9 +15,10 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const PhoneNameStep = ({ phoneBrands, values, onChange }) => {
+const PhoneNameStep = ({ phoneBrands, values, onChange, errors }) => {
   const classes = useStyles(); 
-
+  console.log(errors);
+  
   return (
     <React.Fragment>
     <Typography component="h1" variant="h6" className={classes.gutterBottom} >
@@ -24,7 +26,7 @@ const PhoneNameStep = ({ phoneBrands, values, onChange }) => {
     </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <FormControl fullWidth>
+          <FormControl fullWidth error={errors.brand ? true : false}>
             <InputLabel htmlFor="phone-brand">Brand *</InputLabel>
             <Select
               required
@@ -43,6 +45,7 @@ const PhoneNameStep = ({ phoneBrands, values, onChange }) => {
               ))
             }
             </Select>
+            <FormHelperText>{errors.brand}</FormHelperText>
           </FormControl>
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -51,6 +54,8 @@ const PhoneNameStep = ({ phoneBrands, values, onChange }) => {
             id="name"
             name="name"
             label="Phone name"
+            helperText={errors.name}
+            error={errors.name ? true : false}
             fullWidth
             autoComplete="lname"
             value={values.name || ''}
@@ -63,6 +68,8 @@ const PhoneNameStep = ({ phoneBrands, values, onChange }) => {
             id="price"
             name="price"
             label="Phone price"
+            helperText={errors.price}
+            error={errors.price ? true : false}
             fullWidth
             autoComplete="lname"
             value={values.price || ''}
@@ -75,6 +82,8 @@ const PhoneNameStep = ({ phoneBrands, values, onChange }) => {
             label='Phone Description'
             id="description"
             name="description"
+            helperText={errors.description}
+            error={errors.description ? true : false}
             multiline={true}
             rows={6}
             rowsMax={6}
