@@ -11,7 +11,7 @@ import FormHelperText from '@material-ui/core/FormHelperText'
 
 const useStyles = makeStyles(theme => ({
   gutterBottom: {
-    paddingBottom: theme.spacing(3)
+    paddingBottom: theme.spacing(2)
   }
 }));
 

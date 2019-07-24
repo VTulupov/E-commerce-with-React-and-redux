@@ -13,7 +13,7 @@ const Routes = () => {
       <Switch>
         <Route path='/' component={HomePage} exact={true} />
         <Route path='/cart' component={CartPage} />
-        <Route path='/phones/:id' component={Phone} />
+        <Route path='/phones/:id' component={Phone} exact={true} />
         <Route path='/add-phone-form' component={AddPhoneForm} />
         <Route component={NotFound} />
       </Switch>

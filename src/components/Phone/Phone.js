@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import './Phone.scss';
 import CartBox from './../CartBox/CartBox';
@@ -8,6 +8,10 @@ import phoneImg from './../../product-2.png';
 import { getAllPhones } from '../../selectors/phones';
 
 const Phone = ({ match }) => {
+  useEffect(() => {
+
+  }, [match.params.id])
+
   const phones = useSelector(getAllPhones);
   const phoneId = phones.find(({ id }) => id === match.params.id);
 
