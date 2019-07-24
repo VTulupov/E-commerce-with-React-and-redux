@@ -1,1 +1,0 @@
-export const getPaymentInfo = (state) => state.paymentInfo.paymentInfo; 
