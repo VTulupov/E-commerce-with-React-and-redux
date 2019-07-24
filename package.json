@@ -2,6 +2,7 @@
   "name": "e-commerce-redux",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://vtulupov.github.io/E-commerce-with-React-and-redux/  ",
   "dependencies": {
     "@material-ui/core": "^4.2.0",
     "gh-pages": "^2.0.1",
@@ -17,6 +18,8 @@
     "uuid": "^3.3.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
