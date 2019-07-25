@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 import './PhoneGrid.scss';
 import PhoneGridItem from '../phoneGridItem/PhoneGridItem';
 import { getFilteredPhones } from '../../selectors/phones';
@@ -21,8 +21,14 @@ const PhoneGrid = () => {
     pageNumbers.push(i);
   }
 
+  useEffect(() => {
+    if (filteredPhones.length < 12) {
+      setCurrentPage(1)
+    }
+  }, [filteredPhones])
+
   // Change page
-  const paginate = (number) => setCurrentPage(number)
+  const paginate = (number) => setCurrentPage(number);
 
   return (
     <Fragment>
