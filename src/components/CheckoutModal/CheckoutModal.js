@@ -13,10 +13,12 @@ import PaymentForm from './PaymentForm';
 import Review from './Review';
 import uuid from 'uuid/v4'
 import { clearCart } from '../../actions/phones';
-import { useDispatch } from 'react-redux';
-import { addPaymentInfo, clearInfo } from '../../actions/payment';
+import { useDispatch, useSelector } from 'react-redux';
+import { addShippingInfo, addCardInfo } from '../../actions/payment';
 import { useForm } from '../../hooks/useForm.js/useForm';
 import validateForm from './CheckoutFormValidtation';
+import { getCartState } from '../../selectors/phones';
+import { makeOrder } from '../../actions/orders';
 
 const useStyles = makeStyles(theme => ({
   stepper: {
@@ -43,6 +45,9 @@ const CheckoutModal = ({ modal, closeModal }) => {
   const dispatch = useDispatch();
   let [ activeStep, setActiveStep ] = useState(0);
   const steps = ['Shipping address', 'Payment details', 'Review your order'];
+  const cartState = useSelector(getCartState);
+
+  const cartItems = cartState.map((items) => items);
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
@@ -54,18 +59,43 @@ const CheckoutModal = ({ modal, closeModal }) => {
 
   const submitFormCallback = () => {
     if (activeStep === 2) {
-      dispatch(addPaymentInfo({
+      // add shipping info
+      dispatch(addShippingInfo({
         firstName,
         lastName,
         address,
         city,
         region,
         zip,
-        country,
+        country
+      }))
+
+      // add the credit card info
+      dispatch(addCardInfo({
         cardName,
         cardNumber,
         expiryDate,
         CVV
+      }))
+
+      // combine the shipping info, card info and cart into 1 reducer to create the order
+      dispatch(makeOrder({
+        shippingInfo: {
+          firstName,
+          lastName,
+          address,
+          city,
+          region,
+          zip,
+          country
+        },
+        cardInfo: {
+          cardName,
+          cardNumber,
+          expiryDate,
+          CVV
+        },
+        items: [ ...cartItems ]
       }))
       handleNext();
     } else {
@@ -82,7 +112,6 @@ const CheckoutModal = ({ modal, closeModal }) => {
       setActiveStep(activeStep = 0);
       closeModal();
       dispatch(clearCart());
-      dispatch(clearInfo());
     } else {
       closeModal();
     }
