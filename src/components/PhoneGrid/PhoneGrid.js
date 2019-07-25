@@ -3,12 +3,16 @@ import './PhoneGrid.scss';
 import PhoneGridItem from '../phoneGridItem/PhoneGridItem';
 import { getFilteredPhones } from '../../selectors/phones';
 import { useSelector } from 'react-redux';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 
 const PhoneGrid = () => {
   const filteredPhones = useSelector(getFilteredPhones);
   // Set pagination and limit phones 12 per page
   const [ currentPage, setCurrentPage ] = useState(1);
   const [ phonesPerPage ] = useState(12);
+  const [ value, setValue ] = useState(0); 
+  const handleChange = (newValue) => setValue(newValue);
 
   // Get current phones
   const indexOfLastPhone = currentPage * phonesPerPage;
@@ -36,10 +40,10 @@ const PhoneGrid = () => {
               <li className={currentPage === number ? 'active' : ''} key={number} onClick={() => paginate(number)}>
                 {number}
               </li>
-            )) : 
-            null
+            )) :
+              null
           }
-          <div className={"bar"}></div>
+          <div className="bar"></div>
         </ul>
       </div>
     </Fragment>
