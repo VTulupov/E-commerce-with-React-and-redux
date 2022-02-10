@@ -6,7 +6,7 @@
   "dependencies": {
     "@material-ui/core": "^4.2.0",
     "gh-pages": "^2.0.1",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-modal": "^3.9.1",
